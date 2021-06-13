@@ -4,10 +4,7 @@ These collect app information from IOS App Store (through fnd.io) and Google Pla
 * Files
 
   * IOS
-- ~compile_apps.py~ : extract information from saved html pages from ~Source~ folder.
-_ 
-- ~parse.py~ s: safe pages from theappstore.org *Not used*
-- 
-  * Android
-- 
-- ~stats.py~ : App selection statistics
+    - compile_apps.py : extract information from saved html pages from ~Source~ folder.
+    - ~parse.py : safe pages from theappstore.org *Not used*~
+  * Android   
+    - ~stats.py~ : App selection statistics
