@@ -1,0 +1,11 @@
+import xlrd
+
+mainData_book = xlrd.open_workbook("data.xls", formatting_info=True)
+mainData_sheet = mainData_book.sheet_by_index(0)
+for row in range(1, 101):
+    rowValues = mainData_sheet.row_values(row, start_colx=0, end_colx=8)
+    company_name = rowValues[0]
+
+    link = mainData_sheet.hyperlink_map.get((row, 0))
+    url = '(No URL)' if link is None else link.url_or_path
+    print(company_name.ljust(20) + ': ' + url)

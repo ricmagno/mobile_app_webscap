@@ -1,0 +1,3326 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   Search results | The App Store
+  </title>
+  <meta content="" name="description"/>
+  <meta charset="utf-8"/>
+  <meta content="https://theappstore.org/images/logo128.png" property="og:image">
+   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport"/>
+   <link href="" rel="canonical"/>
+   <link href="/images/logo512.png" rel="image_src">
+    <meta content="https://theappstore.org/images/logo128.png" property="og:image"/>
+    <link href="/images/logo512.png" rel="image_src"/>
+    <link href="/images/logo128.png" rel="icon" type="image/png"/>
+    <link href="/style.css?v=1586293281" rel="stylesheet" type="text/css"/>
+    <link href="/font.css?v=1465155272" rel="stylesheet" type="text/css"/>
+    <link href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" rel="stylesheet"/>
+    <link href="/fontawesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="/images/appleico.png" rel="apple-touch-icon"/>
+    <link href="/images/startup.png" rel="apple-touch-startup-image"/>
+    <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+    </script>
+    <script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3305360867964490",
+            enable_page_level_ads: true
+        });
+    </script>
+   </link>
+  </meta>
+ </head>
+ <body>
+  <div class="top-s">
+   <div class="header-s">
+    <a href="https://theappstore.org">
+     <img class="header-s" src="/images/logo128.png"/>
+    </a>
+    <a href="https://theappstore.org">
+     <h1 class="logotext-s">
+      TheAppStore.org
+     </h1>
+    </a>
+   </div>
+   <div class="search">
+    <div style="float:left;">
+     <select class="main" id="platform" style="border-radius:10px 0px 0px 10px;">
+      <option selected="selected" value="software">
+       iPhone
+      </option>
+      <option value="iPadSoftware">
+       iPad
+      </option>
+      <option value="macSoftware">
+       macOS
+      </option>
+     </select>
+    </div>
+    <div class="searchbox" style="float:left;">
+     <input class="main" id="searchtxt" onkeypress="inputEmail(event);" type="text"/>
+    </div>
+    <div style="float:left;">
+     <a href="javascript:submitPage();">
+      <i aria-hidden="true" class="fa fa-search main-s">
+      </i>
+     </a>
+    </div>
+    <div style="float:left;">
+     <a href="javascript:hideFilters();">
+      <i aria-hidden="true" class="fa fa-filter filter-s">
+      </i>
+     </a>
+    </div>
+   </div>
+   <span class="divHide" id="divhidden1">
+   </span>
+   <span class="divHide" id="divtotal1">
+   </span>
+   <div class="topresults-s">
+    (Showing
+    <span id="divhidden2">
+    </span>
+    /
+    <span id="divtotal2">
+    </span>
+    results)
+   </div>
+   <div id="privateerr" style="display:none;color:red;font-weight:bold;text-align:center;">
+    This site might not work well in incognito/private mode.
+   </div>
+  </div>
+  <form class="idff" id="idff">
+   <div class="filters-s" id="filters">
+    <br class="only-mobile"/>
+    <h2 class="filter">
+     Filter/Refine results
+    </h2>
+    <div class="filterblock">
+     <h3 class="filter">
+      Last updated (within):
+     </h3>
+     <input checked="" id="idlast120" name="lastupdate" onchange="filter();" type="radio" value="120"/>
+     <label for="idlast120">
+      Any
+     </label>
+     <input id="idlast6" name="lastupdate" onchange="filter();" type="radio" value="6"/>
+     <label for="idlast6">
+      6 months
+     </label>
+     <input id="idlast12" name="lastupdate" onchange="filter();" type="radio" value="12"/>
+     <label for="idlast12">
+      1 year
+     </label>
+     <input id="idlast24" name="lastupdate" onchange="filter();" type="radio" value="24"/>
+     <label for="idlast24">
+      2 years
+     </label>
+     <input id="idlast36" name="lastupdate" onchange="filter();" type="radio" value="36"/>
+     <label for="idlast36">
+      3 years
+     </label>
+    </div>
+    <div class="filterblock">
+     <h3 class="filter">
+      Ratings (or better):
+     </h3>
+     <input checked="" id="idrating0" name="ratings" onchange="filter();" type="radio" value="0"/>
+     <label for="idrating0">
+      Any
+     </label>
+     <input id="idrating2" name="ratings" onchange="filter();" type="radio" value="2"/>
+     <label for="idrating2">
+      <img class="star" src="/images/star2.png"/>
+     </label>
+     <input id="idrating3" name="ratings" onchange="filter();" type="radio" value="3"/>
+     <label for="idrating3">
+      <img class="star" src="/images/star3.png"/>
+     </label>
+     <input id="idrating4" name="ratings" onchange="filter();" type="radio" value="4"/>
+     <label for="idrating4">
+      <img class="star" src="/images/star4.png"/>
+     </label>
+     <input id="idbypass" name="bypass" onchange="filter();" type="checkbox"/>
+     <label for="idbypass">
+      Bypass for new apps
+      <br/>
+      <span style="padding-left:2.5em;">
+       with less than 5 reviews
+      </span>
+     </label>
+    </div>
+    <div class="filterblock">
+     <h3 class="filter">
+      Price:
+     </h3>
+     <input checked="" id="idpriceany" name="price" onchange="filter();" type="radio" value="Any"/>
+     <label for="idpriceany">
+      Any
+     </label>
+     <input id="idpricefree" name="price" onchange="filter();" type="radio" value="Free"/>
+     <label for="idpricefree">
+      Free
+     </label>
+     <input id="idpricepaid" name="price" onchange="filter();" type="radio" value="Paid"/>
+     <label for="idpricepaid">
+      Paid
+     </label>
+    </div>
+    <div class="filterblock">
+     <h3 class="filter">
+      Limit to Categories:
+     </h3>
+     <select name="category" onchange="filter();" style="width:200px;font-size:1em">
+      <option selected="selected" value="Any">
+       -Any-
+      </option>
+      <option value="Books">
+       Books
+      </option>
+      <option value="Business">
+       Business
+      </option>
+      <option value="Catalogs">
+       Catalogs
+      </option>
+      <option value="Developer Tools">
+       Developer Tools
+      </option>
+      <option value="Education">
+       Education
+      </option>
+      <option value="Entertainment">
+       Entertainment
+      </option>
+      <option value="Finance">
+       Finance
+      </option>
+      <option value="Food &amp; Drink">
+       Food &amp; Drink
+      </option>
+      <option value="Games">
+       Games
+      </option>
+      <option value="Graphics &amp; Design">
+       Graphics &amp; Design
+      </option>
+      <option value="Health &amp; Fitness">
+       Health &amp; Fitness
+      </option>
+      <option value="Lifestyle">
+       Lifestyle
+      </option>
+      <option value="Kids">
+       Kids
+      </option>
+      <option value="Magazines &amp; Newspapers">
+       Magazines &amp; Newspapers
+      </option>
+      <option value="Medical">
+       Medical
+      </option>
+      <option value="Music">
+       Music
+      </option>
+      <option value="Navigation">
+       Navigation
+      </option>
+      <option value="News">
+       News
+      </option>
+      <option value="Photo &amp; Video">
+       Photo &amp; Video
+      </option>
+      <option value="Productivity">
+       Productivity
+      </option>
+      <option value="Reference">
+       Reference
+      </option>
+      <option value="Shopping">
+       Shopping
+      </option>
+      <option value="Social Networking">
+       Social Networking
+      </option>
+      <option value="Sports">
+       Sports
+      </option>
+      <option value="Travel">
+       Travel
+      </option>
+      <option value="Utilities">
+       Utilities
+      </option>
+      <option value="Video">
+       Video
+      </option>
+      <option value="Weather">
+       Weather
+      </option>
+     </select>
+     <div style="padding-top:1em;">
+     </div>
+     <h3 class="filter">
+      Made for ages:
+     </h3>
+     <select name="age" onchange="filter();" style="width:200px;font-size:1em">
+      <option selected="selected" value="Any">
+       -Any-
+      </option>
+      <option value="4+">
+       4+
+      </option>
+      <option value="9+">
+       9+
+      </option>
+      <option value="12+">
+       12+
+      </option>
+      <option value="17+">
+       17+
+      </option>
+     </select>
+    </div>
+    <hr/>
+    <div class="filterblock">
+     <input id="idexpandall" name="expandall" onchange="filter();" type="checkbox"/>
+     <label for="idexpandall">
+      Expand all Screenshots
+     </label>
+    </div>
+    <a class="faq" href="/faq.php" style="padding:0em;">
+     <i aria-hidden="true" class="fa fa-info-circle">
+     </i>
+     Learn more
+    </a>
+    <br/>
+    <div class="closerefine" id="closerefine">
+     <a href="javascript:hideFilters();">
+      <i aria-hidden="true" class="fa fa-check-circle" style="color:#2ec758">
+      </i>
+     </a>
+    </div>
+   </div>
+  </form>
+  <div class="bodypanel" id="bodypanel">
+   <div age="17+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="1379" ratings="4.07397" released="136" relevance="38" trackid="358899126" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Tagged -Chill, Chat &amp; Go Live!" src="https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/91/c8/9a/91c89a5b-b117-531e-b8f3-d9d067c1b358/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Tagged -Chill, Chat &amp; Go Live!
+     </div>
+     <div class="appdetail">
+      Tagged is the #1 place to link up with new people, chill and play games with over 300 Million other users!
+
+So, what makes us different from other app
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star4.png"/>
+      (1,379)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Ifwe Inc.
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/tagged-chill-chat-go-live/id358899126?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Tagged -Chill, Chat &amp; Go Live!','Free','https://apps.apple.com/nz/app/tagged-chill-chat-go-live/id358899126?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/47/88/a6/4788a651-c100-326c-9a61-8e9b6922cec3/73190e07-e15b-42aa-a2a1-f379c150db9c_00_Intro.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/cd/c9/ac/cdc9ac51-a26f-ce80-d46d-9a5133095987/ab016165-a591-41d8-86b6-6ab8b232ea05_01_Browse.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/c5/39/d7/c539d7d3-8f21-e6d1-35cc-90a13db67c5c/e10399a6-3d2a-4f0b-84b6-509280f47ec2_02_MeetMe.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/3c/e3/1d/3ce31d08-9b0a-a177-b28b-6956c14a1fc5/363d9a57-8647-46df-9fa4-a32192ddbd8b_03_Match.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Entertainment" class="appmain" price="0" ratingcount="135" ratings="3.57037" released="120" relevance="38" trackid="447269854" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Chat for Strangers, Video Chat" src="https://is3-ssl.mzstatic.com/image/thumb/Purple125/v4/58/3d/2b/583d2bc1-684d-b89e-504d-084b6e801bf2/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Chat for Strangers, Video Chat
+     </div>
+     <div class="appdetail">
+      Making new friends is now an entertaining iPhone and IPad experience.
+
+With "Chat for Strangers - Random Video Chat" you can chat with 1000's of other
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star4.png"/>
+      (135)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      FunPokes, Inc.
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/chat-for-strangers-video-chat/id447269854?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Chat for Strangers, Video Chat','Free','https://apps.apple.com/nz/app/chat-for-strangers-video-chat/id447269854?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/18/22/98/18229868-92c1-dd7f-a8b0-eac81d55f310/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/d6/14/33/d6143307-b0a4-39c8-b17e-1526d1031099/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/76/d5/a3/76d5a3e5-2785-2ff6-36d6-afe8fc5b7453/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/fd/7f/60/fd7f6098-6c36-c71f-2dcf-64b588f5161e/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="152" ratings="4.20395" released="56" relevance="48" trackid="1164067996" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="3Fun: Threesome &amp; Swingers App" src="https://is2-ssl.mzstatic.com/image/thumb/Purple115/v4/95/2c/ba/952cba94-fa6e-c79e-60f8-f65361b5c329/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      3Fun: Threesome &amp; Swingers App
+     </div>
+     <div class="appdetail">
+      3Fun - The Best Threesome App for Meeting Local Open-minded People for 3some &amp; Swinger Lifestyle. 3Fun is a safe and private space where you can share
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star4.png"/>
+      (152)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      3Fun Limited
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/3fun-threesome-swingers-app/id1164067996?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','3Fun: Threesome &amp; Swingers App','Free','https://apps.apple.com/nz/app/3fun-threesome-swingers-app/id1164067996?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/7e/05/e2/7e05e215-2821-717e-d11f-a9348298d88e/3b5e6fc1-ce06-4387-bd44-a47046793e6a_1.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/2c/ea/63/2cea638c-1a6f-2b10-c00d-c58b696e8ae8/f4723bd8-8e11-487f-b57a-017f7b5a1fed_1242_2208.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/d2/f8/4c/d2f84cc3-f062-ea72-f1d9-faee8fc6b923/49ee3106-18b1-4c94-9e90-6959c8a7a8ad_3.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/67/cc/d1/67ccd138-07f6-a60e-07e2-82500c936ec0/8b97aa30-e04a-4eed-b558-d8019a0762ae_4.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="2" ratings="3" released="65" relevance="70" trackid="1057001329" updated="20">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Bisexual Dating App - Purpled!" src="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/ed/2b/41/ed2b41f9-056c-e700-09e8-6b659b920b87/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Bisexual Dating App - Purpled!
+     </div>
+     <div class="appdetail">
+      Purpled is the #1 bisexual dating app for bi and bicurious singles and couples. Purpled is the world's first,secure and most effective dating club for
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star3.png"/>
+      (2)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      GoMatch Limited
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/bisexual-dating-app-purpled/id1057001329?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Bisexual Dating App - Purpled!','Free','https://apps.apple.com/nz/app/bisexual-dating-app-purpled/id1057001329?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/e0/0b/a6/e00ba6e3-5e96-c71f-b1dd-5ad504d35a58/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/36/13/83/3613833a-00ec-8751-c61c-7983b33d320a/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/05/cf/51/05cf514c-dcda-680d-c429-2acc6c840c1c/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/8f/78/19/8f781912-3396-1527-d468-3134a106cd8e/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="221" ratings="4.52941" released="132" relevance="36" trackid="380015247" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="SCRUFF" src="https://is5-ssl.mzstatic.com/image/thumb/Purple115/v4/5a/e7/8e/5ae78ee6-6298-ef52-ad7b-31d8ac9c20d9/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      SCRUFF
+     </div>
+     <div class="appdetail">
+      SCRUFF is the top-rated and most reliable app for gay, bi, trans and queer guys to connect. 
+More than 15 million guys worldwide use SCRUFF to find fr
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star5.png"/>
+      (221)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Perry Street Software, Inc
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/scruff/id380015247?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','SCRUFF','Free','https://apps.apple.com/nz/app/scruff/id380015247?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/85/02/4b/85024b13-ec37-e416-5685-f6c8143c8b38/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/fb/e7/95/fbe7958a-c1dc-24e5-9902-6921fa44aef4/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/54/cd/d2/54cdd257-1dd7-2f0c-1891-048578ecd991/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/97/aa/99/97aa99b5-6503-cdf1-a0f3-ed4c4346aa6a/pr_source.jpg/392x696bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+   </script>
+   <!-- Ad1 -->
+   <ins class="adsbygoogle" data-ad-client="ca-pub-3305360867964490" data-ad-format="auto" data-ad-slot="5733057384" data-full-width-responsive="true" style="display:block">
+   </ins>
+   <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+   </script>
+   <br/>
+   <div age="17+" categories="Lifestyle,Social Networking" class="appmain" price="0" ratingcount="138" ratings="4.12319" released="84" relevance="47" trackid="887914690" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Feeld: For Couples &amp; Singles" src="https://is3-ssl.mzstatic.com/image/thumb/Purple125/v4/af/f2/8b/aff28b40-e34d-5893-3c37-474ebfe182dc/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Feeld: For Couples &amp; Singles
+     </div>
+     <div class="appdetail">
+      Dating for humans. Feeld is a digital dating space where you can explore your desires. An alternative dating platform for couples and singles that is
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star4.png"/>
+      (138)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Feeld Ltd
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/feeld-for-couples-singles/id887914690?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Feeld: For Couples &amp; Singles','Free','https://apps.apple.com/nz/app/feeld-for-couples-singles/id887914690?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/ba/b6/60/bab66095-bd8f-1ca1-9057-d8221271706c/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/a4/97/aa/a497aa31-5889-f2e5-a16a-93cad1fdf969/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/37/3d/43/373d4376-b726-22e6-5110-2c96b4effe23/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/b3/5b/59/b35b597f-7fc6-24bb-88c6-21d0eb5c2be0/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="4+" categories="Games,Card,Entertainment,Casual" class="appmain" price="3.49" ratingcount="42" ratings="4.5" released="57" relevance="35" trackid="1155712961" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Digger - Classic retro arcade game" src="https://is4-ssl.mzstatic.com/image/thumb/Purple111/v4/51/c0/cb/51c0cb23-5c42-d31c-5abe-38154ba1dbd9/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Digger - Classic retro arcade game
+     </div>
+     <div class="appdetail">
+      Re-live one of the most popular games of the 1980s. Digger is the classic arcade game remastered with complete touch inputs for your iPhone and iPad (
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star5.png"/>
+      (42)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Games
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      <a href="https://inchwest.com/digger/?ref=tas">
+       InchWest
+      </a>
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/digger-classic-retro-arcade-game/id1155712961?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Digger - Classic retro arcade game','$3.49','https://apps.apple.com/nz/app/digger-classic-retro-arcade-game/id1155712961?uo=4');" rel="nofollow" target="tas">
+      $3.49
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple62/v4/fa/36/6c/fa366c37-bcba-0037-a663-bc61ba9667be/pr_source.png/406x228bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple71/v4/20/da/62/20da62ec-cda2-5699-28d0-f37b5489ba54/pr_source.png/406x228bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Lifestyle,Social Networking" class="appmain" price="0" ratingcount="8" ratings="4.125" released="29" relevance="46" trackid="1437366808" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Threesome Swingers App - 3way" src="https://is2-ssl.mzstatic.com/image/thumb/Purple115/v4/87/21/d6/8721d63b-9fad-f64c-912e-5dd2be4e295e/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Threesome Swingers App - 3way
+     </div>
+     <div class="appdetail">
+      3way is one of the most popular and secure threesome dating apps for singles or couples who are looking for match, chat and meet up.
+
+So far, more tha
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star4.png"/>
+      (8)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Meishan Dating Network Technology LTD
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/threesome-swingers-app-3way/id1437366808?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Threesome Swingers App - 3way','Free','https://apps.apple.com/nz/app/threesome-swingers-app-3way/id1437366808?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/8e/74/8a/8e748a62-c2a9-682b-0b9d-9a6cd8cbdc1f/a6cc4f02-7bfb-461e-811c-cf9ea6c5f902_5.5_2@3x.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/0e/af/33/0eaf33de-631f-f58d-83da-1689baba1fc8/25388e4d-94a7-433e-bb5a-0b99dba2ae9d_5.5_1@3x.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/70/32/f8/7032f836-1d3c-bbc3-bd06-260c26837b7e/d715cc1c-de70-439a-ab68-d229f1c82d20_5.5_3@3x.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/b5/a1/9a/b5a19a55-a2ff-44bf-a907-0e6620532ae0/df95c434-4555-4e34-8bcb-692161f4ce1a_5.5_4@3x.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="25" ratings="4.48" released="63" relevance="34" trackid="1090274263" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Blued - Gay Chat &amp; Gay Dating" src="https://is3-ssl.mzstatic.com/image/thumb/Purple125/v4/26/1a/83/261a83e5-716a-56c7-571a-9d6aa2a51898/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Blued - Gay Chat &amp; Gay Dating
+     </div>
+     <div class="appdetail">
+      Blued is a diverse, fun &amp; reliable gay dating app with more than 54 million users globally. Blued allows you to date cute guys from around the world,
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star4.png"/>
+      (25)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      BlueCity Holdings Hong Kong Limited
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/blued-gay-chat-gay-dating/id1090274263?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Blued - Gay Chat &amp; Gay Dating','Free','https://apps.apple.com/nz/app/blued-gay-chat-gay-dating/id1090274263?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/65/7f/cc/657fcc37-6d76-f7cf-ff32-c167c297a3c5/f36c9aa8-3b1c-478f-b4b3-9ba9526e160e_6.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple115/v4/4d/d8/62/4dd862d7-00a6-ca1d-7742-4c6d0e17d58a/49b785bd-2315-48c4-b47c-dc83259a7878_3.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple115/v4/84/82/32/8482327a-66eb-fa8e-e2b9-c3d204dd10cf/c8b98b1e-9a12-40f9-a1ff-fcf0f2080d05_5.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple125/v4/e3/bd/ac/e3bdacf0-b673-cd9b-82e5-3baaa0b4e5e5/a39f7ad6-6f13-4c5a-a21e-2ef9c8ace014_4-v2.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Photo &amp; Video" class="appmain" price="0" ratingcount="1" ratings="5" released="113" relevance="45" trackid="483508042" updated="62">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Video Chat BFF - Social Text Messenger to Match Straight, Gay, Lesbian Singles nearby for FaceTime, Skype, Kik &amp; Snapchat calls" src="https://is3-ssl.mzstatic.com/image/thumb/Purple49/v4/03/b3/f8/03b3f828-dcb8-4143-83ef-fcdd8bb40334/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Video Chat BFF - Social Text Messenger to Match Straight, Gay, Lesbian Singles nearby for FaceTime, Skype, Kik &amp; Snapchat calls
+     </div>
+     <div class="appdetail">
+      Join, search and contact over 350,000 FaceTime, Skype, Kik &amp; Snapchat users around the world for FREE! 
+
+Looking for friendship, dating, a relationshi
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star5.png"/>
+      (1)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      FaceTimeBff Pty Ltd
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/video-chat-bff-social-text-messenger-to-match-straight/id483508042?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Video Chat BFF - Social Text Messenger to Match Straight, Gay, Lesbian Singles nearby for FaceTime, Skype, Kik &amp; Snapchat calls','Free','https://apps.apple.com/nz/app/video-chat-bff-social-text-messenger-to-match-straight/id483508042?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple41/v4/90/1c/cf/901ccf22-fcf4-989b-981d-54f5de87c0a4/mzm.ddbscybn.jpg/322x551bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple19/v4/69/c9/db/69c9db98-5278-bb32-cab3-90c7e0e0cd25/mzm.qhgkvfzn.jpg/322x551bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple62/v4/80/04/89/80048912-a282-8562-eb6e-c075b066376f/mzm.tukrzlym.jpg/322x551bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple19/v4/85/2b/b3/852bb3bd-1029-0899-c8fb-c22376e83c5f/mzm.ktjvuczn.jpg/322x551bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Lifestyle,Social Networking" class="appmain" price="0" ratingcount="3" ratings="1" released="127" relevance="33" trackid="398537918" updated="13">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Manhunt – Gay Chat, Meet, Date" src="https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/f9/e1/4c/f9e14c7d-5f9b-1a33-7cdd-bb54eacea260/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Manhunt – Gay Chat, Meet, Date
+     </div>
+     <div class="appdetail">
+      MANHUNT is the most iconic gay social app for gay, bi, trans, and queer guys worldwide.  Manhunt is the most direct way for men to meet other men.  Be
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star1.png"/>
+      (3)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Online Buddies, Inc
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/manhunt-gay-chat-meet-date/id398537918?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Manhunt – Gay Chat, Meet, Date','Free','https://apps.apple.com/nz/app/manhunt-gay-chat-meet-date/id398537918?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/99/48/d3/9948d34e-7523-54be-1d0a-124a8a75a8cf/mzl.ngnxjnsb.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/7f/3e/18/7f3e18d2-1ef1-65c7-1f95-250e1e2eff3d/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/73/34/f9/7334f9d0-0b72-5bbd-bef5-1bd7e302a08f/mzl.iiaroazj.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/06/15/c8/0615c83d-3123-cca6-5fb3-94caa0717d59/mzl.vdggzcfi.jpg/392x696bb.jpg"/>
+    </div>
+   </div>
+   <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+   </script>
+   <!-- Ad2 -->
+   <ins class="adsbygoogle" data-ad-client="ca-pub-3305360867964490" data-ad-format="link" data-ad-slot="4069456071" data-full-width-responsive="true" style="display:block">
+   </ins>
+   <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+   </script>
+   <br/>
+   <div age="17+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="0" ratings="0" released="42" relevance="44" trackid="1293657229" updated="33">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Talko: Lesbian Dating &amp; Chat" src="https://is3-ssl.mzstatic.com/image/thumb/Purple128/v4/0f/0b/14/0f0b149f-b016-a189-a8d4-d6f5525ce4d4/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Talko: Lesbian Dating &amp; Chat
+     </div>
+     <div class="appdetail">
+      Talko is the #1 Free lesbian dating app and video chat for lesbian, queer, bisexual and transgender women! Find amazing, interesting women locally or
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Talko Inc
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/talko-lesbian-dating-chat/id1293657229?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Talko: Lesbian Dating &amp; Chat','Free','https://apps.apple.com/nz/app/talko-lesbian-dating-chat/id1293657229?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/8e/5a/b4/8e5ab4dc-2c16-38ab-9bc7-10a390037e72/mzl.cbwtbrsw.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple128/v4/9e/9d/34/9e9d34a4-88e3-f486-762b-ca73a1b09cd3/mzl.kvzocssu.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple118/v4/13/61/23/13612376-245b-6509-0687-f3017437fc64/mzl.bhvewhtz.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/39/fb/9f/39fb9f16-8a31-45b3-4e6a-5f62c6df6912/mzl.imefliky.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="12+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="1" ratings="4" released="54" relevance="55" trackid="1185423120" updated="40">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Bisexual Amino" src="https://is1-ssl.mzstatic.com/image/thumb/Purple62/v4/fa/a0/8b/faa08bf0-025c-5137-6e26-1b7a5e22a4ae/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Bisexual Amino
+     </div>
+     <div class="appdetail">
+      Bisexual Amino is the fastest growing community and chat platform for young bisexuals and allies. Meet new friends, express yourself, and share your o
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star4.png"/>
+      (1)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Narvii Inc.
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/bisexual-amino/id1185423120?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Bisexual Amino','Free','https://apps.apple.com/nz/app/bisexual-amino/id1185423120?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple128/v4/6b/96/7b/6b967bca-d6f3-f6dd-27b3-6ebe00b4e9df/mzl.ftajajyv.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple62/v4/c0/92/b3/c092b3eb-fea2-ad73-3557-ff2e1b3241e6/mzl.xxcjzwod.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple118/v4/b2/f0/fd/b2f0fdf8-9699-d48a-c93e-9065f81cc5dd/mzl.ndzwrync.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/ce/f4/6c/cef46c6e-3e9c-891f-442a-5ba496a1250d/mzl.laafjgwx.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Lifestyle" class="appmain" price="0" ratingcount="0" ratings="0" released="20" relevance="43" trackid="1481809362" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="BC: Lesbians &amp; LGBT Chat App" src="https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/6b/e9/34/6be9343f-c65e-63ac-e6b2-7f64389c9919/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      BC: Lesbians &amp; LGBT Chat App
+     </div>
+     <div class="appdetail">
+      BC is #1 Bisexual, LGBT Dating App. Our app is designed for meeting local couples, singles of all sexual preferences including straight, gay, bisexual
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Sathish Devasani
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/bc-lesbians-lgbt-chat-app/id1481809362?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','BC: Lesbians &amp; LGBT Chat App','Free','https://apps.apple.com/nz/app/bc-lesbians-lgbt-chat-app/id1481809362?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/5a/c9/63/5ac963e2-48f7-864c-dad4-69e785b0819a/dbb5e170-ae66-463f-b569-3838c7c95e07_5.5_1@3x.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple114/v4/5c/85/7d/5c857dec-d7f8-2b0b-8dba-c1b12f385e80/c1f182c0-9dcd-4f29-a204-9ecf50c074ab_5.5_2@3x.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/2e/6a/f7/2e6af792-1ca2-ea98-5674-eeb1bd1bfcfc/42d70741-9eba-494e-9668-b2f0a083af3b_5.5_3@3x.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/46/ca/61/46ca617c-32c9-2d90-74e1-def9019453a9/ffb0d2ce-593d-452f-adea-5b3f9d7260dc_5.5_4@3x.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking" class="appmain" price="0" ratingcount="0" ratings="0" released="16" relevance="64" trackid="1485668421" updated="13">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Bimeet: Bisexual Dating App" src="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/b6/f0/c4/b6f0c4b9-60ee-1f69-a34c-2abcd74c513e/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Bimeet: Bisexual Dating App
+     </div>
+     <div class="appdetail">
+      Bimeet is best bisexual and threesome dating and hookup app for kinky bi, open-minded couples and singles who are into 3some, swinger relationships an
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      华 唐
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/bimeet-bisexual-dating-app/id1485668421?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Bimeet: Bisexual Dating App','Free','https://apps.apple.com/nz/app/bimeet-bisexual-dating-app/id1485668421?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/71/6b/ca/716bca5e-3582-c2bd-e455-360855c9332a/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/2f/0e/e5/2f0ee595-0c29-b41c-1088-a8ac5d9c38c1/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/e2/f3/b1/e2f3b1e1-8e41-bfd9-82c9-4ae16017491d/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/1b/b6/39/1bb6399a-34e8-8207-790a-3d32e56787a6/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="4+" categories="Entertainment,Lifestyle" class="appmain" price="0" ratingcount="2" ratings="2.5" released="101" relevance="31" trackid="573437798" updated="57">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Gender Bender" src="https://is3-ssl.mzstatic.com/image/thumb/Purple71/v4/4f/30/f0/4f30f0ff-228a-abdb-c511-69c5db16c2a8/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Gender Bender
+     </div>
+     <div class="appdetail">
+      Note: This app is intended for entertainment purposes only and does not provide true gender bending functionality
+
+Gender Bender is the first realisti
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star3.png"/>
+      (2)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Entertainment
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Scopic Software
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/gender-bender/id573437798?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Gender Bender','Free','https://apps.apple.com/nz/app/gender-bender/id573437798?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple71/v4/b7/50/65/b7506532-0b40-570c-e6a2-b028f8e78f6d/pr_source.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple71/v4/e5/ee/9f/e5ee9f47-92c8-cb21-d39e-8cc66dffbe4c/pr_source.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple62/v4/53/5b/d3/535bd3bd-1717-0d50-0e65-62eab1b9cb25/pr_source.jpg/392x696bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Lifestyle,Magazines &amp; Newspapers" class="appmain" price="0" ratingcount="3" ratings="3.33333" released="132" relevance="30" trackid="373975518" updated="7">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Attitude Magazine." src="https://is4-ssl.mzstatic.com/image/thumb/Purple124/v4/db/b8/83/dbb883ad-366e-9be7-fb21-2fb90d36fe00/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Attitude Magazine.
+     </div>
+     <div class="appdetail">
+      Attitude is the bestselling gay men’s digital magazine. Redesigned for iPad, our interactive editions come with moving video covers, behind the scen
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star3.png"/>
+      (3)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Stream Publishing Limited
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/attitude-magazine/id373975518?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Attitude Magazine.','Free','https://apps.apple.com/nz/app/attitude-magazine/id373975518?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple114/v4/9a/9b/31/9a9b31d4-8a1d-a100-de8a-108243d2059c/iOS-5.5-in_0.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/12/73/67/12736793-6ee7-70a7-b88c-5151d71ac4ce/iOS-5.5-in_2.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/27/fa/51/27fa51c4-c364-de0b-a8d8-d74ced764025/iOS-5.5-in_4.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple124/v4/f5/11/77/f5117776-9b27-75e1-156e-be13b4f6961f/iOS-5.5-in_6.jpg/392x696bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="4+" categories="Lifestyle,Magazines &amp; Newspapers" class="appmain" price="0" ratingcount="0" ratings="0" released="132" relevance="30" trackid="374917341" updated="8">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="GAY TIMES" src="https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/4b/00/d6/4b00d602-1de7-1fd6-bcb1-c9d7f7d24382/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      GAY TIMES
+     </div>
+     <div class="appdetail">
+      Welcome to the official GAY TIMES app, where GAYTIMES+ members can enjoy immediate access to GAY TIMES Magazine.
+
+GAYTIMES+ is the new LGBTQ+ membersh
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      GAY TIMES LIMITED
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/gay-times/id374917341?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','GAY TIMES','Free','https://apps.apple.com/nz/app/gay-times/id374917341?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/83/5f/3b/835f3b80-54ee-6ac9-18bd-f401004e67e6/9b3b2b78-c701-4707-af2e-bb8055f98412_ZINIO-APP_SCREENSHOT-IPHONE_5.5-01.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/3a/6d/46/3a6d46d7-aec3-26ea-1ccf-3ef46793a655/4b51f28a-96a2-4199-b4d7-e3220def7a84_ZINIO-APP_SCREENSHOT-IPHONE_5.5-02.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/4d/b6/5d/4db65de5-378e-a7ac-9efd-e940d20c2167/d354fa0c-a224-4719-962e-f634437ca649_ZINIO-APP_SCREENSHOT-IPHONE_5.5-03.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/75/5b/e8/755be83a-2e35-cf4b-3bf0-12d99fdf8403/90c1c841-c6e7-440c-87ba-55759b615ed0_ZINIO-APP_SCREENSHOT-IPHONE_5.5-04.jpg/392x696bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Lifestyle,Social Networking" class="appmain" price="0" ratingcount="0" ratings="0" released="20" relevance="62" trackid="1483939469" updated="1">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Bix – Bisexual Dating App" src="https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/b5/5c/a5/b55ca523-6d54-0fe3-69ed-d5c6d42ae47d/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Bix – Bisexual Dating App
+     </div>
+     <div class="appdetail">
+      Bix is #1 bisexual dating app for local singles &amp; couples, bi-curious. Here you can find other sexy and open-minded people who a
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Shekhar Ravagonda
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/bix-bisexual-dating-app/id1483939469?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Bix – Bisexual Dating App','Free','https://apps.apple.com/nz/app/bix-bisexual-dating-app/id1483939469?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/ba/41/28/ba412850-86ad-6274-1961-26b53da49513/fa546f51-3b89-4270-b2bb-461a3375c42a_1_DISCOVER_APP_SS_-_8.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/83/4d/41/834d415d-b644-3415-267e-d31ca58a3911/de725c9e-9c1e-4db8-b1ec-ffa09cf2476a_2_USER_DETAILS_APP_SS_-_8.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/2a/22/87/2a228732-63c5-c95c-2964-ce44007c770a/53bca04d-319a-4f75-a526-3e25219c6603_3_FILTER_APP_SS-__8.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/05/8d/65/058d65d0-9f69-8a65-4c97-224b28fe5346/70e9d33f-4236-4536-ab59-82ee617b7b97_4_LIKES_APP_SS_-__8.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="4+" categories="Navigation,Travel" class="appmain" price="9.99" ratingcount="18" ratings="4.5" released="65" relevance="29" trackid="1071875261" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Live speed limit alerts" src="https://is2-ssl.mzstatic.com/image/thumb/Purple128/v4/cd/68/b1/cd68b1f3-6edb-fed9-7c3f-aba018110906/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Live speed limit alerts
+     </div>
+     <div class="appdetail">
+      Real time voice alerts based on "actual" speed limits. Unlike other apps, speed limits are automatically updated for your location. See the intro vide
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star5.png"/>
+      (18)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Navigation
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      <a href="https://inchwest.com/livespeed/?ref=tas">
+       InchWest
+      </a>
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/live-speed-limit-alerts/id1071875261?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Live speed limit alerts','$9.99','https://apps.apple.com/nz/app/live-speed-limit-alerts/id1071875261?uo=4');" rel="nofollow" target="tas">
+      $9.99
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple117/v4/85/cf/2d/85cf2d6f-646b-97f7-35df-03a402a2f5ef/mzl.bxlyrybl.jpg/406x228bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple117/v4/b8/d4/5a/b8d45ac2-5bd5-30b8-306f-11a5fd2f1c64/mzl.yuyimugy.jpg/406x228bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking" class="appmain" price="0" ratingcount="15" ratings="3.86667" released="117" relevance="28" trackid="400632898" updated="5">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Fridae - LGBT Asia" src="https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/dc/26/74/dc267401-5f20-ec38-c241-33c08986e3d6/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Fridae - LGBT Asia
+     </div>
+     <div class="appdetail">
+      The Fridae Mobile Dating App - Empowering LGBT Asia
+
+The Fridae App, for the Asian Lesbian, Gay, Bi and Trans Community all over the world.
+
+Founded i
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star4.png"/>
+      (15)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Fridae Limited
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/fridae-lgbt-asia/id400632898?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Fridae - LGBT Asia','Free','https://apps.apple.com/nz/app/fridae-lgbt-asia/id400632898?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/f5/99/9e/f5999eed-de2e-3be7-3762-3d549e711f1d/pr_source.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/1a/7c/1e/1a7c1efb-cc9b-98e9-9b46-495338baa289/pr_source.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/9d/7f/b1/9d7fb197-86cf-73ec-8e29-24ca67bd2403/pr_source.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple124/v4/3a/bb/ab/3abbabff-ad92-5f85-864a-d6b2af0a94bc/pr_source.jpg/392x696bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="12+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="14" ratings="4.92856" released="58" relevance="28" trackid="1138410378" updated="40">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="LGBT+ Amino Community and Chat" src="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/58/32/9c/58329c4a-3540-fb60-8c94-145c20b92a3b/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      LGBT+ Amino Community and Chat
+     </div>
+     <div class="appdetail">
+      LGBT+ Amino is the fastest growing community and chat platform for young LGBT+ people and allies. Meet new friends, express yourself, and share your o
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star5.png"/>
+      (14)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Narvii Inc.
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/lgbt-amino-community-and-chat/id1138410378?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','LGBT+ Amino Community and Chat','Free','https://apps.apple.com/nz/app/lgbt-amino-community-and-chat/id1138410378?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple128/v4/98/cc/14/98cc14f5-762e-20bb-971c-21a2ff8ad90a/mzl.idbmqdxg.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple128/v4/bc/90/72/bc907233-a16f-1c30-5016-93d38a0334b5/mzl.jkxguteo.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple128/v4/1f/45/0c/1f450c5d-6459-2f16-3434-001b12b8d410/mzl.kpjxhlex.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple128/v4/24/14/77/24147790-c517-be0f-7a52-84c2d56808f4/mzl.mznzxjrh.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="11" ratings="3.36364" released="57" relevance="38" trackid="1152403579" updated="5">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Lesly: Lesbian Dating &amp; Meetup" src="https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/4e/ba/30/4eba3094-fa6d-0731-6870-f15b28078f9b/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Lesly: Lesbian Dating &amp; Meetup
+     </div>
+     <div class="appdetail">
+      Lesly is one of the best lesbian dating apps for lesbians and bisexual women. It's a great community for lesbians, bisexual &amp; queer women to chat, dat
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star3.png"/>
+      (11)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Chengdu Xijiu Trading Co., Ltd
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/lesly-lesbian-dating-meetup/id1152403579?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Lesly: Lesbian Dating &amp; Meetup','Free','https://apps.apple.com/nz/app/lesly-lesbian-dating-meetup/id1152403579?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/02/00/79/0200794d-44cb-7a19-c35b-1c7df6e3776e/mzl.dzmsisct.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/0e/8b/43/0e8b43d6-63d7-0630-d489-37a76949fd91/mzl.assyprlq.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/57/23/7b/57237b0b-3874-95f2-924f-93048152fe8a/mzl.syqpiais.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/c9/74/f1/c974f1ca-a47f-780e-87df-f2f023f2062a/mzl.jfrwqsyk.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Entertainment" class="appmain" price="0" ratingcount="0" ratings="0" released="22" relevance="27" trackid="1452669178" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="DILF" src="https://is3-ssl.mzstatic.com/image/thumb/Purple125/v4/7e/db/99/7edb9941-89e0-fa44-498a-49100c9a5239/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      DILF
+     </div>
+     <div class="appdetail">
+      DUDES, DADDIES, DISCREET, DUNNO...DILF is for ALL MEN!
+
+Joe Whitaker Presents, Man Upp Productions, and the International DILF brand bring you the nex
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Man-Upp Enterprises, LLC
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/dilf/id1452669178?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','DILF','Free','https://apps.apple.com/nz/app/dilf/id1452669178?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/fb/f3/27/fbf32718-f33c-5d63-5322-fe41bf383105/4d39b258-a655-420c-91c2-a9267abe779b_1242x2208bb__U00281_U0029.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/46/39/75/4639750e-8565-72c6-25b2-f78144c3b97c/ddc39b7b-ee77-4756-b3bc-1b1bdd4c8780_1242x2208bb-2__U00281_U0029.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/c0/3d/cd/c03dcdc0-b660-c497-b638-3d56d09414a8/bc9b9142-e942-4e81-b854-51dd064fe7a4_1242x2208bb-4__U00281_U0029.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/de/7a/ab/de7aabcf-3c52-e910-1ac6-275a16aa5968/a4a7e396-3c5f-4d86-95e7-f2654c380214_Simulator_Screen_Shot_-_iPhone_8_Plus_-_2020-09-19_at_23.51.27.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="0" ratings="0" released="8" relevance="59" trackid="1531552830" updated="3">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="BiBoom: Bisexual Chat &amp; Dating" src="https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/52/a0/2c/52a02c8b-da53-24e6-fff6-0c925358f79b/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      BiBoom: Bisexual Chat &amp; Dating
+     </div>
+     <div class="appdetail">
+      BiBoom is the best bisexual dating App. Our App is designed for meeting local singles of all sexual people who are into bisexual dating lifestyle.If y
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      佳丽 陈
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/biboom-bisexual-chat-dating/id1531552830?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','BiBoom: Bisexual Chat &amp; Dating','Free','https://apps.apple.com/nz/app/biboom-bisexual-chat-dating/id1531552830?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/d0/d6/87/d0d687cd-29ce-1aa7-5816-f24e1e130b20/a5a2f6c4-0066-40d8-881b-85098026abb7_A_U7b2c_U4e00_U5f20__U753b_U677f_1.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple114/v4/11/d8/a1/11d8a166-824d-e6cc-cbab-8f59f1a3182c/ce7921f0-4416-42ef-beb3-1502f71800a9__U65b0_U56fe_U4e00__U753b_U677f_1.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple124/v4/d3/8f/de/d38fde56-9dd7-dfaa-8fbe-d5b825553a0f/65b0e7cc-58ea-43ca-ba6d-67f753294e60__U7b2c_U4e09_U5f20__U753b_U677f_1.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple124/v4/b9/2a/03/b92a03cd-3e34-c1cc-652d-20a5902c48a2/3476577d-3d45-4dcf-aab3-a60d4ffa5a8f__U7b2c_U56db_U5f20__U753b_U677f_1.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Lifestyle,Entertainment" class="appmain" price="0" ratingcount="1" ratings="4" released="35" relevance="37" trackid="1318649256" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="XConfessions. The Couples app" src="https://is5-ssl.mzstatic.com/image/thumb/Purple125/v4/b2/37/b6/b237b6ec-d2db-f28f-d21f-bdc577a7270f/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      XConfessions. The Couples app
+     </div>
+     <div class="appdetail">
+      The XConfessions App is a FREE, fun game for couples to discover new, shared fantasies! 
+
+Download this free couple game right now to spice up your lo
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star4.png"/>
+      (1)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Julian Lerer
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/xconfessions-the-couples-app/id1318649256?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','XConfessions. The Couples app','Free','https://apps.apple.com/nz/app/xconfessions-the-couples-app/id1318649256?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/32/cf/86/32cf863b-727a-5754-9af7-8ca5aa6661ae/661478c4-70e1-4124-b8c0-4f8f01996148_XCApp2021Carrusel5-5_.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/f7/64/8b/f7648b68-7068-84e3-ed08-1f552480310d/985996aa-61f1-4d45-8e55-a135cd65200e_XCApp2021Carrusel5-5_2.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/36/4e/4d/364e4dd9-b427-29cc-f69f-be8553444d7a/5b7944e0-5e33-48ae-bebf-fe36b6c0902f_XCApp2021Carrusel5-5_3.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/9e/0b/8b/9e0b8bde-2258-92b7-3a08-f2c63c52e6de/fbd485c8-6beb-4532-9814-ee7922c29d8a_XCApp2021Carrusel5-5_4.jpg/392x696bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking" class="appmain" price="0" ratingcount="0" ratings="0" released="120" relevance="25" trackid="451345005" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="9monsters Gay Chat" src="https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/41/53/db/4153dba0-f693-cdaf-4148-613a9778e5df/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      9monsters Gay Chat
+     </div>
+     <div class="appdetail">
+      9monsters is a very unique gay social application originating in Japan with a central focus on the Asia-Pacific.
+Mainly, This app has 2 key features w
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      applibros Inc.
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/9monsters-gay-chat/id451345005?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','9monsters Gay Chat','Free','https://apps.apple.com/nz/app/9monsters-gay-chat/id451345005?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/85/fc/86/85fc86ca-dce1-e4c4-d9d1-e46ee538b8a0/2da54016-0ff1-4a5b-b988-0a980b8d836b_2208.1242eng-01.jpg/406x228bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/01/bf/c9/01bfc909-aab3-deb3-d753-22122d320bd0/9b2b7e0d-4180-4fc1-a086-5cc6ff0ccd42_2208.1242eng-02.jpg/406x228bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/21/a9/ba/21a9ba65-d4d1-447f-e2eb-f8d3450dd2ab/c2581d33-3a11-4f17-a958-434a17badd84_2208.1242eng-03.jpg/406x228bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/49/d1/11/49d11161-776a-05be-bc1b-1d481ca1cab0/2c55d21f-e9a9-4d2c-b42b-a74997d0e357_2208.1242eng-07.jpg/406x228bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Lifestyle" class="appmain" price="0" ratingcount="0" ratings="0" released="16" relevance="58" trackid="1498304562" updated="3">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Loov: Bisexual &amp; Casual Dating" src="https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/1a/18/fb/1a18fb6b-e761-a880-716f-87093abc8f5c/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Loov: Bisexual &amp; Casual Dating
+     </div>
+     <div class="appdetail">
+      Loov is the best bisexual, LGBT dating app for kink singles and open-minded couples. Our app is designed for meeting local benaughty &amp; flirt singles &amp;
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Nagaraju Kolukonda
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/loov-bisexual-casual-dating/id1498304562?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Loov: Bisexual &amp; Casual Dating','Free','https://apps.apple.com/nz/app/loov-bisexual-casual-dating/id1498304562?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/0b/f6/41/0bf64113-2ccc-11ae-1f92-5a6b8c3ad7c9/075ca1e6-44cb-424b-bb69-1bf5dd185bd2_1.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/70/4b/73/704b7344-a23b-455d-2fd8-07de5cbfb6de/3047a919-c4ab-4332-8b45-afb06516a4d7_2.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/4c/62/97/4c6297d0-05bf-abce-206d-4d80b04fc337/c8ab53ff-03b5-46b9-a5d1-471a71623c36_3.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/1a/69/fa/1a69fac6-3bbe-ec19-6d88-8d7795f0d79a/e25c499c-7fbf-43c3-9102-60b5747f5bb2_4.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="News,Lifestyle" class="appmain" price="0" ratingcount="1" ratings="5" released="137" relevance="24" trackid="355894031" updated="9">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="EDGE Gay/Lesbian News" src="https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/2a/72/d2/2a72d2b1-05d4-ad16-7e0c-8cc948cedc44/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      EDGE Gay/Lesbian News
+     </div>
+     <div class="appdetail">
+      Welcome to the world’s largest network for LGBTQ+ news and entertainment! EDGE delivers the latest in national news and politics, movies, television
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star5.png"/>
+      (1)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      News
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      EDGE Publications Inc.
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/edge-gay-lesbian-news/id355894031?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','EDGE Gay/Lesbian News','Free','https://apps.apple.com/nz/app/edge-gay-lesbian-news/id355894031?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple114/v4/af/3e/cc/af3ecc44-1ce5-3ae6-a336-fff5fb5a3a2e/94bd5bf3-c65d-4ab1-ab1a-49c9518e14d9_edge-iphone8_U002b-itunesiPhone-11.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple114/v4/ac/b5/69/acb569b3-0e2e-3813-80c1-edefb9f1a02d/f362e21f-ea00-4a10-8ed4-80c445eb4c51_edge-iphone8_U002b-itunesiPhone-11-copy.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/f6/7e/e1/f67ee106-8e0f-e343-80ca-e7f329233011/7eb698e2-6e76-4b37-baf7-72377ecd0dd9_edge-iphone8_U002b-itunesiPhone-11-copy-2.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/0c/61/cd/0c61cd16-4a24-eb74-0d62-25e9dbb49504/1c2fc2f1-df90-44d1-b2f3-e91491439878_edge-iphone8_U002b-itunesiPhone-11-copy-3.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Lifestyle,Magazines &amp; Newspapers" class="appmain" price="0" ratingcount="1" ratings="5" released="132" relevance="35" trackid="374900918" updated="1">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="DIVA Magazine" src="https://is3-ssl.mzstatic.com/image/thumb/Purple115/v4/0c/a0/80/0ca08088-0d45-4877-589f-89f820ae7ba6/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      DIVA Magazine
+     </div>
+     <div class="appdetail">
+      Having recently celebrated its 20th year, DIVA magazine remains Europe's biggest-selling lesbian magazine, offering the very best in lesbian and bisex
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star5.png"/>
+      (1)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      MagazineCloner.com Limited
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/diva-magazine/id374900918?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','DIVA Magazine','Free','https://apps.apple.com/nz/app/diva-magazine/id374900918?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/67/8e/40/678e40ab-716e-7aa6-92aa-f892970832d1/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/57/f2/03/57f2035a-b17a-32e6-441d-5928c7233e0a/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/94/bf/6f/94bf6f59-5b5f-2e0e-2123-73d45a871034/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/16/c1/70/16c170fe-1f75-2929-1c1e-c6553d1945dc/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking" class="appmain" price="0" ratingcount="4" ratings="3" released="46" relevance="23" trackid="1259968780" updated="26">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="For Her: Flirt &amp; Meet Women" src="https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/f7/34/0d/f7340da8-4661-9b20-655f-7b21d08c5382/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      For Her: Flirt &amp; Meet Women
+     </div>
+     <div class="appdetail">
+      FOR HER is a leading lesbian dating app, helping thousands of lesbian singles find their perfect match. Tap to install &amp; Go Flirting!
+
+As a female-onl
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star3.png"/>
+      (4)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      TANG KEBI
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/for-her-flirt-meet-women/id1259968780?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','For Her: Flirt &amp; Meet Women','Free','https://apps.apple.com/nz/app/for-her-flirt-meet-women/id1259968780?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple114/v4/f2/5f/7a/f25f7a08-554a-16e2-a757-a4617a6a4d71/mzl.cqddxcjj.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/51/e6/6c/51e66ccd-312f-0599-a1ee-06000cf2c377/mzl.ukknlgkc.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/32/e4/92/32e49266-0393-4254-01d0-cf193dafdc48/mzl.koonffly.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/a0/ee/97/a0ee97ba-86f9-11a6-0fee-8a02fb0b64d8/mzl.rbdhcubn.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="12+" categories="News,Shopping" class="appmain" price="0" ratingcount="0" ratings="0" released="133" relevance="34" trackid="377964635" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="PinkNews" src="https://is5-ssl.mzstatic.com/image/thumb/Purple115/v4/da/d8/09/dad809f6-c2e0-a753-589a-d1cbfba53a43/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      PinkNews
+     </div>
+     <div class="appdetail">
+      Welcome to the PinkNews app, an inclusive space for the queer community and their allies. Bringing you all the latest lesbian, gay, bisexual, transgen
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      News
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Pinknews Media Group Limited
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/pinknews/id377964635?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','PinkNews','Free','https://apps.apple.com/nz/app/pinknews/id377964635?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/40/e7/c2/40e7c2dc-7615-7f2a-1b45-44b360b6dd11/9497be90-4489-46fa-ba3f-79250435a9d1_Read_A.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/2e/89/42/2e8942cb-002e-dcba-e3e5-b3afd386fc33/fa3296e2-7026-4d34-8139-261d270b3354_Read_B.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/1f/48/bb/1f48bb00-1658-8199-01fe-59702c80145b/01c023bd-3cbd-4c1b-84a6-0b668faec248_Events.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/cb/85/f3/cb85f382-2f46-d1cc-3b53-13d2a1465c01/58d1d5a8-72f6-4c58-893a-754d50ef5b9e_Search.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Entertainment" class="appmain" price="0" ratingcount="1" ratings="5" released="27" relevance="22" trackid="1451072845" updated="23">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Sex Game for All Couples" src="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/39/bd/4d/39bd4d0f-72da-20ec-591e-51e3d1ddca9e/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Sex Game for All Couples
+     </div>
+     <div class="appdetail">
+      "Sex game for all couples" offers thousands of possible dares to try with your partner or with multiple players!
+
+Personalize the gaming experience wi
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star5.png"/>
+      (1)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Entertainment
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Eleven Design
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/sex-game-for-all-couples/id1451072845?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Sex Game for All Couples','Free','https://apps.apple.com/nz/app/sex-game-for-all-couples/id1451072845?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/40/c1/6f/40c16f05-5d80-91fa-c2cf-7d563a558b75/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/35/36/69/35366907-0659-a8d3-c138-f6c61c93ae76/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/9a/92/f8/9a92f83a-da7e-daac-ba6e-87a6f01c5f1f/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/99/08/7d/99087dac-4079-8930-c74f-eea0c84ae825/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Entertainment" class="appmain" price="0" ratingcount="0" ratings="0" released="102" relevance="22" trackid="543845489" updated="28">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Krave- Gay Chat, Gay Dating" src="https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/50/04/63/500463b4-1eb0-fa62-3229-e7da25e632ea/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Krave- Gay Chat, Gay Dating
+     </div>
+     <div class="appdetail">
+      Meet, chat, send photos and videos on Krave. The hottest app for gay, bi, and curious men who are looking to have fun, or find love. Hottest gay chat,
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      HiBall, LLC
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/krave-gay-chat-gay-dating/id543845489?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Krave- Gay Chat, Gay Dating','Free','https://apps.apple.com/nz/app/krave-gay-chat-gay-dating/id543845489?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple71/v4/1d/55/4c/1d554c3e-79a8-a92f-7dde-1beea25e99ec/pr_source.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple62/v4/17/91/0a/17910a8d-a96b-47af-8bfe-6dd628dd2f4f/pr_source.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple42/v4/dd/2f/5a/dd2f5a64-7d18-f99e-4206-6dc9d80fe02e/pr_source.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple71/v4/01/98/f0/0198f06c-df93-87eb-7752-62f9ba2703c3/pr_source.jpg/392x696bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Lifestyle,Social Networking" class="appmain" price="0" ratingcount="5" ratings="3.2" released="44" relevance="32" trackid="1297152391" updated="1">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Lesbian Singles: Dating &amp; Chat" src="https://is3-ssl.mzstatic.com/image/thumb/Purple125/v4/b9/b8/af/b9b8af4d-7627-60ce-e71a-db9628006453/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Lesbian Singles: Dating &amp; Chat
+     </div>
+     <div class="appdetail">
+      Lesbian Singles is the best new free video dating app for lesbians and bisexuals; a great way to meet people nearby, make new friends, chat, meet sing
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star3.png"/>
+      (5)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      IGNITE TECHNOLOGY LLC
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/lesbian-singles-dating-chat/id1297152391?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Lesbian Singles: Dating &amp; Chat','Free','https://apps.apple.com/nz/app/lesbian-singles-dating-chat/id1297152391?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/dc/9d/78/dc9d7845-a412-7a41-ab9b-2cffb0755ea0/mzl.sdpjtcvp.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/55/bf/60/55bf60e8-241e-c78c-d2c0-1345219da272/0a945b47-aae5-403d-a7bc-01d94b230bec_1.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/3f/e0/ae/3fe0ae0d-6cc3-9e76-8c3a-832f349ce717/1c34027a-2adb-412f-a64f-518035eaa6b1_2.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/38/67/5a/38675a58-db9c-620f-88b9-cacca26fd0b4/8684d3d2-3008-493c-888c-873b85bae5fe_3.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Entertainment,Photo &amp; Video" class="appmain" price="0" ratingcount="1" ratings="5" released="14" relevance="32" trackid="1196141528" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="GagaOOLala - Find Your Story" src="https://is2-ssl.mzstatic.com/image/thumb/Purple125/v4/d0/3a/ba/d03aba1c-69a5-dcef-4b31-1526d60d4f40/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      GagaOOLala - Find Your Story
+     </div>
+     <div class="appdetail">
+      Gay, lesbian, transgender, bisexual, queer… we have a wide and diverse collection of LGBTQ features, shorts, documentaries, series and original cont
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star5.png"/>
+      (1)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Entertainment
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Portico Media Co., Ltd
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/gagaoolala-find-your-story/id1196141528?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','GagaOOLala - Find Your Story','Free','https://apps.apple.com/nz/app/gagaoolala-find-your-story/id1196141528?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple115/v4/11/24/2a/11242a12-15bd-96f7-2c4f-aebf3deb1d5e/713e4d94-6252-4fd8-a338-781181fa9ee6_5.5_U540b-iphone_1242x2208px__U82f11.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple125/v4/0c/3a/40/0c3a400d-ac4e-8277-b822-f4b581dd31e1/b10a13d7-272a-4712-85bc-a85660d24bf7_5.5_U540b-iphone_1242x2208px__U82f12.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/a2/b3/96/a2b396e1-1cca-df6e-6766-051593af9cb5/1e6c162a-837e-44d7-9fd2-fe2ef90b9258_5.5_U540b-iphone_1242x2208px__U82f13.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/b9/d5/d2/b9d5d28a-01a9-f7ec-48f8-5c790d072ebc/90cab5c5-bf5d-4350-8d23-0535d2505ed2_5.5_U540b-iphone_1242x2208px__U82f14.jpg/392x696bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking" class="appmain" price="0" ratingcount="3" ratings="4.66667" released="19" relevance="31" trackid="1436964232" updated="1">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Lex - Queer Friends &amp; Dating" src="https://is2-ssl.mzstatic.com/image/thumb/Purple125/v4/14/cd/87/14cd8738-a59e-7d31-9065-92f4ba28c79c/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Lex - Queer Friends &amp; Dating
+     </div>
+     <div class="appdetail">
+      Lex is the free text-centered social and dating app for lesbian, bisexual, queer women, trans &amp; nonbinary folks to make lasting connections. Inspired
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star5.png"/>
+      (3)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Personal Best, Inc.
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/lex-queer-friends-dating/id1436964232?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Lex - Queer Friends &amp; Dating','Free','https://apps.apple.com/nz/app/lex-queer-friends-dating/id1436964232?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/33/74/67/337467f6-4549-c030-bca7-79913acceb9b/e1c5dc9e-c540-45ad-9515-0799ca17455c_1_A5.5.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/0c/ee/e5/0ceee56c-ac2f-f70e-24b5-a4b6b0b2f475/d546ba2c-e47c-43e4-8ae2-afd9517c710f_2_A5.5.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/98/ba/00/98ba00dc-b981-abeb-84a2-c470a8b6ad43/3219ebdd-d1d2-43b5-b856-e0635e6219ca_3_A5.5.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/36/7e/ac/367eacf0-d369-7131-a394-ab481c204258/cc5b96be-c769-4c02-b5d3-da146b5d36d9_4_A5.5.jpg/392x696bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="12+" categories="Health &amp; Fitness,Lifestyle" class="appmain" price="0" ratingcount="3" ratings="3" released="44" relevance="31" trackid="1295966295" updated="4">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Pride Counseling" src="https://is4-ssl.mzstatic.com/image/thumb/Purple124/v4/5b/c3/cf/5bc3cfb5-179c-21a7-00a9-ed1baadd2589/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Pride Counseling
+     </div>
+     <div class="appdetail">
+      Built around acceptance and accessibility, Pride Counseling is an online counseling platform for the LGBTQ community. We change the way people get hel
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star3.png"/>
+      (3)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Health &amp; Fitness
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Compile, Inc.
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/pride-counseling/id1295966295?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Pride Counseling','Free','https://apps.apple.com/nz/app/pride-counseling/id1295966295?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/02/a4/a9/02a4a913-2a12-6e08-6b4b-e00297127a69/mzl.bozkhtsh.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/31/35/a8/3135a8e8-f92b-2f58-4fa8-2f59d19124f1/mzl.dzjbloky.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/34/08/81/34088167-805c-4625-71bb-8fe501c54c2d/mzl.mummfcmx.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/1b/2e/6f/1b2e6f89-0d75-dca7-7852-284b7841c0d3/mzl.ekbhxplq.jpg/392x696bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="2" ratings="4.5" released="61" relevance="30" trackid="1031461510" updated="61">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Only Women" src="https://is4-ssl.mzstatic.com/image/thumb/Purple49/v4/fe/d0/64/fed06481-05da-3db3-afbe-193f601473be/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Only Women
+     </div>
+     <div class="appdetail">
+      Find like minded women in your area, make friends and find love. Only Women is a fully featured mobile and tablet dating app for lesbian and bisexual
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star5.png"/>
+      (2)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Rocketware Limited
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/only-women/id1031461510?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Only Women','Free','https://apps.apple.com/nz/app/only-women/id1031461510?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple18/v4/48/50/f0/4850f021-e225-893a-0757-af2fb1091a1e/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple60/v4/1f/09/c5/1f09c5a8-85ae-6ce1-dc7b-ffe0ced2322d/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple30/v4/aa/e5/fc/aae5fc49-6af6-27ff-29c8-9a580df4bb2d/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple20/v4/61/40/3f/61403f19-cc0e-49c8-8508-c177f23cb32a/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="4+" categories="Music,Entertainment" class="appmain" price="0" ratingcount="0" ratings="0" released="113" relevance="19" trackid="493922078" updated="18">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Gaydio" src="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/c8/6a/34/c86a341d-8229-c1dd-8af0-5bd99e48646c/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Gaydio
+     </div>
+     <div class="appdetail">
+      Listen to the world’s biggest gay radio station on your smartphone or tablet. 
+
+Rate, share and download the music you’re listening to.
+
+Interact
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Music
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Gaydio Community Interest Company
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/gaydio/id493922078?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Gaydio','Free','https://apps.apple.com/nz/app/gaydio/id493922078?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/69/63/73/696373aa-bb2b-7571-773b-766bce56a96e/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/f3/9d/c3/f39dc313-12e6-e759-3ace-84043e554c97/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/58/b8/92/58b892e4-8223-7f9e-3051-24b40fee1ada/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Entertainment,Lifestyle" class="appmain" price="0" ratingcount="0" ratings="0" released="64" relevance="18" trackid="1086794466" updated="2">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Revry" src="https://is5-ssl.mzstatic.com/image/thumb/Purple114/v4/f3/b3/da/f3b3da42-8cc8-c512-b350-682deaaf0878/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Revry
+     </div>
+     <div class="appdetail">
+      Stream Queer TV 24/7 with Revry, featuring Live and On-Demand LGBTQ Movies, Shows, Music, News, and Podcasts all in one app.
+
+Revry features multiple
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Entertainment
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      REVRY, Inc.
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/revry/id1086794466?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Revry','Free','https://apps.apple.com/nz/app/revry/id1086794466?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/0c/12/b5/0c12b5c7-6ad4-61a4-52c0-077462aff401/97109b59-add7-4528-9140-44546e6d098e_iOS-5.5-Screenshot1.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/02/8f/96/028f96c4-31b4-da10-155f-e8d1ef80e3b3/21fbef6c-1d85-4db0-9868-ffdd0dfcf0d5_iOS-5.5-Screenshot2.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/16/79/13/16791366-3a5c-da73-476a-92e23724871a/9ce6f52c-1d9c-4275-9fda-0b635883b09c_iOS-5.5-Screenshot3.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/d4/75/54/d475543b-7ca6-4d10-74e7-28e00ce86f8b/e118d6c2-5391-4e43-98b7-966a9962fe20_iOS-5.5-Screenshot4.jpg/392x696bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking" class="appmain" price="0" ratingcount="4" ratings="5" released="65" relevance="18" trackid="1071300251" updated="3">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Shuggr" src="https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/0d/d7/6c/0dd76cfb-9c2a-92da-a353-1a0c9aa051fd/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Shuggr
+     </div>
+     <div class="appdetail">
+      Shuggr is your gay social network to meet guys nearby. Get started now!
+
+• Browse through unlimited profiles
+• See profile visitors
+• Auto-trans
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star5.png"/>
+      (4)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Shuggr Ltd.
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/shuggr/id1071300251?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Shuggr','Free','https://apps.apple.com/nz/app/shuggr/id1071300251?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/11/a1/5c/11a15cf7-0f51-980b-56fa-5b20bdef60e6/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/45/94/30/45943043-50bc-5151-ced1-40b2dc3559b2/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/f5/a9/7f/f5a97f68-20bc-55d6-99b0-518625948f39/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/ea/a5/e9/eaa5e91d-4109-74b7-9452-7fa6a8b3926f/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Lifestyle,Social Networking" class="appmain" price="0" ratingcount="0" ratings="0" released="70" relevance="28" trackid="1021079981" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="LesBeSocial: Lesbian LGBTQ app" src="https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/2e/e3/de/2ee3dee2-b8ff-ad3f-6ce3-46ce24f9ab29/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      LesBeSocial: Lesbian LGBTQ app
+     </div>
+     <div class="appdetail">
+      Welcome to the tribe of LesBeSocial and a brand new more social way to meet lesbian friends from all around the world! LesBeSocial is the best and mos
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Social Tech Invest AB
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/lesbesocial-lesbian-lgbtq-app/id1021079981?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','LesBeSocial: Lesbian LGBTQ app','Free','https://apps.apple.com/nz/app/lesbesocial-lesbian-lgbtq-app/id1021079981?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/af/32/da/af32da88-9557-a839-fe48-2b8459975266/tns.aokssnkv.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/9d/82/f2/9d82f2e4-90fb-25ab-6379-fef3a1ad17a3/ea0976e2-a58e-47e1-8902-e7e34392d29d_Artboard_92.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple124/v4/2d/4c/2d/2d4c2d94-8ea7-cb3f-e74b-a0e5d517ef53/tns.sargzwdl.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/4e/51/8b/4e518b68-d4d1-db0b-73f7-e67f329daac5/tns.elnrpkli.jpg/392x696bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="0" ratings="0" released="76" relevance="17" trackid="969052674" updated="34">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Musclr - Gay Muscle Dating" src="https://is3-ssl.mzstatic.com/image/thumb/Purple128/v4/1d/69/96/1d6996c4-98d3-5ef8-0d6e-45f6b3844e84/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Musclr - Gay Muscle Dating
+     </div>
+     <div class="appdetail">
+      Musclr is a dating app and social network for catered to the muscle community and muscle-worshipers! You can choose to sign up as a Muscle Man or Wors
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Pocket Bear LTD
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/musclr-gay-muscle-dating/id969052674?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Musclr - Gay Muscle Dating','Free','https://apps.apple.com/nz/app/musclr-gay-muscle-dating/id969052674?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/3a/db/85/3adb85ed-92aa-57a1-4e17-8c973d7b91a9/mzl.aiarcbkd.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple128/v4/04/b6/d1/04b6d1fd-7c47-099e-e4d4-0f5b4b4519bb/mzl.laxjealu.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/4d/39/d3/4d39d326-e4a6-7c7b-303b-a0a4a6bffd62/mzl.yonrkovh.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/d4/da/7e/d4da7e6d-3527-fb68-c8ee-7634891412a2/mzl.iqhecxxx.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Lifestyle,Social Networking" class="appmain" price="0" ratingcount="0" ratings="0" released="79" relevance="16" trackid="943249588" updated="14">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="GRUNT" src="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/d4/ef/d0/d4efd0ab-d1fc-e4b0-9ca8-a8d5eab8ecd6/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      GRUNT
+     </div>
+     <div class="appdetail">
+      Grunt is the next generation social networking app for meeting anyone nearby!
+
+Regardless of your gender or sexuality or what your into, Grunt is for
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Sentedia, LLC
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/grunt/id943249588?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','GRUNT','Free','https://apps.apple.com/nz/app/grunt/id943249588?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/23/d4/95/23d49508-50a1-af5e-4e01-13c8ad7bd474/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/a0/90/a6/a090a6ce-8797-5954-49ae-7f112da7126f/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/4e/b9/57/4eb957fe-b683-c823-f599-f0560a78bdc6/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/da/58/1f/da581f93-3ae0-bb1b-b3c4-3c67f9991da3/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="0" ratings="0" released="51" relevance="16" trackid="1188285842" updated="1">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Xtremboy - gay fetish chat" src="https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/5d/d9/d6/5dd9d66b-c812-4181-a6e1-a886a8e5d164/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Xtremboy - gay fetish chat
+     </div>
+     <div class="appdetail">
+      Meet french gay men interested in alternative lifestyles, adrenaline sports and various fetish outfits! Dating service for gay men into boxing, combat
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      I  PLANETE
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/xtremboy-gay-fetish-chat/id1188285842?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Xtremboy - gay fetish chat','Free','https://apps.apple.com/nz/app/xtremboy-gay-fetish-chat/id1188285842?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/a2/cc/95/a2cc9580-ab93-80e4-b012-7e1f7cbce7c6/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/b0/2e/7d/b02e7d66-2e7d-1b62-ee22-e9f5bcdbba12/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/9a/e6/76/9ae676c3-621c-1b6e-f49a-a48b9f43d24c/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/c9/5f/35/c95f35c5-e95c-976c-2087-720b92882cac/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Lifestyle" class="appmain" price="0" ratingcount="0" ratings="0" released="38" relevance="15" trackid="1366352639" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Tabuu : Swinglifestyle Dating" src="https://is2-ssl.mzstatic.com/image/thumb/Purple125/v4/27/05/16/270516fa-88e9-e4d0-110c-bbb82e990355/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Tabuu : Swinglifestyle Dating
+     </div>
+     <div class="appdetail">
+      Tabuu is the best place to meet open-minded couples and singles in the world’s hottest dating app.
+Browse through couple profiles and discover the b
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Tabuu Pty Ltd
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/tabuu-swinglifestyle-dating/id1366352639?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Tabuu : Swinglifestyle Dating','Free','https://apps.apple.com/nz/app/tabuu-swinglifestyle-dating/id1366352639?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/e8/21/91/e8219147-cc19-abe1-346c-de18308b8f08/mzl.yaabrwva.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/13/9c/61/139c61d6-0f63-dc7a-0f1e-8a146d283ad7/mzl.wosuzshl.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/74/0f/30/740f3032-a599-c5fa-c359-07de981c67a2/mzl.hocnmzua.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/17/e5/ad/17e5ad6f-e572-ec78-74f3-60b3cb2cbc75/mzl.fjfifjpw.jpg/392x696bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Photo &amp; Video" class="appmain" price="3.49" ratingcount="1" ratings="3" released="94" relevance="26" trackid="624445552" updated="62">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Video Chat BFF Plus! - Social Text Messenger to Match Straight, Gay, Lesbian Singles nearby for FaceTime, Skype, Kik &amp; Snapchat calls" src="https://is4-ssl.mzstatic.com/image/thumb/Purple69/v4/8f/5e/97/8f5e97d1-dedb-3624-47d7-2d458281f872/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Video Chat BFF Plus! - Social Text Messenger to Match Straight, Gay, Lesbian Singles nearby for FaceTime, Skype, Kik &amp; Snapchat calls
+     </div>
+     <div class="appdetail">
+      Join, search and contact over 350,000 FaceTime, Skype, Kik &amp; Snapchat users around the world! 
+
+Looking for friendship, dating, a relationship, networ
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star3.png"/>
+      (1)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      FaceTimeBff Pty Ltd
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/video-chat-bff-plus-social-text-messenger-to-match/id624445552?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Video Chat BFF Plus! - Social Text Messenger to Match Straight, Gay, Lesbian Singles nearby for FaceTime, Skype, Kik &amp; Snapchat calls','$3.49','https://apps.apple.com/nz/app/video-chat-bff-plus-social-text-messenger-to-match/id624445552?uo=4');" rel="nofollow" target="tas">
+      $3.49
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple42/v4/b8/94/49/b8944930-da74-de72-040f-9fd943a5a15e/mzm.ydxvajaz.jpg/322x551bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple62/v4/8f/65/d7/8f65d740-bfef-f6a0-cd70-37edecb909ba/mzm.xrynovbr.jpg/322x551bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple62/v4/b5/09/cc/b509cccf-120a-5a55-6430-e2f65805522a/mzm.frudtkqx.jpg/322x551bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple41/v4/34/2c/cd/342ccd18-fcc8-def9-3c48-7a1779611056/mzm.eqoliqml.jpg/322x551bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Entertainment" class="appmain" price="0" ratingcount="0" ratings="0" released="51" relevance="25" trackid="1199569964" updated="16">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="QueerBFF" src="https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/a8/7e/dc/a87edce6-331e-aa6c-8dc3-5fe39903f4a8/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      QueerBFF
+     </div>
+     <div class="appdetail">
+      MORE THAN A HOOKUP. Join our community of LGBTQ+ people in your neighborhood and around the world. Download QueerBFF for FREE!
+
+We developed QueerBFF
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Gay BFF, LLC
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/queerbff/id1199569964?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','QueerBFF','Free','https://apps.apple.com/nz/app/queerbff/id1199569964?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/7f/db/85/7fdb8556-9381-6419-7cbe-a3f7fea57a34/pr_source.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/81/3d/7e/813d7eec-df0a-c997-fbcb-f61bde7d52e3/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/d6/bd/0a/d6bd0ada-f414-a881-c823-dbc8851cb3d4/pr_source.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/f3/71/61/f37161ab-c1c2-d98b-ecab-7a21881bd55a/pr_source.jpg/392x696bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="1" ratings="5" released="26" relevance="14" trackid="1446173888" updated="1">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Gay Friendly. Dating Chat Meet" src="https://is2-ssl.mzstatic.com/image/thumb/Purple115/v4/d8/08/1f/d8081f96-0c8f-5999-8783-1aa62f6be719/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Gay Friendly. Dating Chat Meet
+     </div>
+     <div class="appdetail">
+      Gay Dating app GayFriendly.dating was developed with great love and attention to details. Our team has more than 10 years of experience in dating site
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star5.png"/>
+      (1)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      DABLTECH LTD
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/gay-friendly-dating-chat-meet/id1446173888?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Gay Friendly. Dating Chat Meet','Free','https://apps.apple.com/nz/app/gay-friendly-dating-chat-meet/id1446173888?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple115/v4/9b/ef/b7/9befb79a-3ad2-270a-6b84-42b6ba108bab/pr_source.jpg/406x228bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple115/v4/e9/73/11/e973112f-d6cd-53d1-8c9d-13d36e0d5e03/a5a9d8fd-d106-4eff-8c2f-87cab84275df_2.jpg/406x228bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple115/v4/93/b8/98/93b898dd-cbdd-72c8-7247-b1139ae0695c/53012cde-29e4-4916-b0c4-f65fe49285ca_3.jpg/406x228bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple125/v4/18/6c/40/186c40df-cb90-5ec2-5829-0d0e14f7e0cb/80372dc6-2c6b-4b10-92cd-771fe5069bd4_4.jpg/406x228bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="12+" categories="Entertainment,Lifestyle" class="appmain" price="0" ratingcount="0" ratings="0" released="113" relevance="13" trackid="501550330" updated="15">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Melbourne Queer Film Festival" src="https://is2-ssl.mzstatic.com/image/thumb/Purple114/v4/af/73/9e/af739ece-4752-1138-78f0-3834267320f9/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Melbourne Queer Film Festival
+     </div>
+     <div class="appdetail">
+      The official app for the 30th Melbourne Queer Film Festival allows you to explore, connect and streamline your Festival experience. 
+
+The Melbourne Qu
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Entertainment
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Vallez Pty Ltd
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/melbourne-queer-film-festival/id501550330?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Melbourne Queer Film Festival','Free','https://apps.apple.com/nz/app/melbourne-queer-film-festival/id501550330?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/72/f5/be/72f5be18-0764-b861-adf1-a8e0f1403bd0/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/45/94/09/4594093b-5bfa-e6ab-baee-c46d83ed0fb2/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/a0/4e/41/a04e414f-e489-cf70-e209-f9df154f163a/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/0c/38/63/0c386321-92c8-c463-560f-8288f5e9ca9a/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="4+" categories="Entertainment" class="appmain" price="0" ratingcount="0" ratings="0" released="3" relevance="24" trackid="1555265907" updated="3">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="LesflicksVOD" src="https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/49/bf/44/49bf44db-090a-aa23-5acd-0141c5fd373e/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      LesflicksVOD
+     </div>
+     <div class="appdetail">
+      LesflicksVOD is a dedicated lesbian &amp; bisexual film and series platform offering a wide (and growing) selection of short films, feature films and webs
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Entertainment
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Lesflicks Ltd
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/lesflicksvod/id1555265907?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','LesflicksVOD','Free','https://apps.apple.com/nz/app/lesflicksvod/id1555265907?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/cf/b6/fc/cfb6fc33-9edc-956e-2334-81d741f91744/203619f3-da8c-4b58-8cf5-e01e68434410_Iphone1242x2208_Cast.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/6a/05/42/6a0542e4-ab35-271b-8fac-a90bf175740b/dbfdf721-ae4e-4c3e-bfaf-65ee71612939_Iphone1242x2208_Downloads.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/f7/33/05/f733052c-3aab-a48c-5f35-966ecafce6ae/dcc20d93-5684-4322-bdbc-2719acabbc6e_Iphone1242x2208_featurefilms.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/dc/85/bc/dc85bcd3-f4ed-85a8-e075-39f64ea0ebbc/9d44d216-b1dd-43eb-9e85-1c34f6936c6e_Iphone1242x2208_watchanywhere.jpg/392x696bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="12+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="0" ratings="0" released="54" relevance="12" trackid="1185421255" updated="40">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Lesbian Amino" src="https://is1-ssl.mzstatic.com/image/thumb/Purple128/v4/cf/66/be/cf66be07-c4de-10bb-9736-95011465a13a/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Lesbian Amino
+     </div>
+     <div class="appdetail">
+      Lesbian Amino is the fastest growing community and chat platform for young lesbians and allies. Meet new friends, express yourself, and share your opi
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Narvii Inc.
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/lesbian-amino/id1185421255?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Lesbian Amino','Free','https://apps.apple.com/nz/app/lesbian-amino/id1185421255?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/ba/83/3b/ba833b99-60fc-d54e-0459-e8ef48b689e6/mzl.wrutvwhc.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple62/v4/f4/da/d7/f4dad7df-eb51-355e-137c-0655a458d296/mzl.lvpkondg.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple128/v4/1f/e0/75/1fe075d5-48b1-a3f1-ac97-500d6a3508ef/mzl.czztbqda.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple128/v4/b7/0e/7e/b70e7ea3-5cb0-82d0-a760-08d2eb3e9032/mzl.rbtmvpxz.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="0" ratings="0" released="48" relevance="23" trackid="1239443455" updated="2">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="United Men Gay Chat" src="https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/74/e0/92/74e092ab-f9f7-dbb6-0beb-82a8b0c054b6/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      United Men Gay Chat
+     </div>
+     <div class="appdetail">
+      Meet gay men from all origins, cultures and races: African gay men, South-american gay men, European gay men, Asian gay men, Indian gay men, black gay
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Studio Presse
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/united-men-gay-chat/id1239443455?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','United Men Gay Chat','Free','https://apps.apple.com/nz/app/united-men-gay-chat/id1239443455?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/ec/5c/1a/ec5c1aaa-25f3-55d3-0d17-be573e2cbdfb/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/c9/b3/3c/c9b33c6c-8070-0162-681b-93cd7d90b6ee/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/00/b0/d6/00b0d6bb-d9a0-a241-e7eb-4ca74db94809/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/2c/9b/46/2c9b4684-fee7-f0bb-a403-85aa628faec8/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Entertainment" class="appmain" price="0" ratingcount="0" ratings="0" released="35" relevance="11" trackid="1409937877" updated="23">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Signal 23 Television" src="https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/e2/63/88/e263883f-e7dd-05ca-d2a7-0eebed288935/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Signal 23 Television
+     </div>
+     <div class="appdetail">
+      Signal 23 Television is an American internet broadcasting television network headquartered in Atlanta, Georgia. Henderson Maddox founded the network t
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Entertainment
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      SIGNAL 23 TELEVISION, LLC
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/signal-23-television/id1409937877?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Signal 23 Television','Free','https://apps.apple.com/nz/app/signal-23-television/id1409937877?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/57/ff/0e/57ff0e81-9faf-efa5-6eb0-bf83af274a3f/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/c3/ee/b6/c3eeb6a3-b12d-1cd3-10fa-986f3906fc3c/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/3c/21/4b/3c214b4a-d707-2b9a-dee0-0da20e15edc8/pr_source.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/1e/f2/74/1ef27468-144d-d292-b079-a22e5888f94c/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Lifestyle,Social Networking" class="appmain" price="0" ratingcount="1" ratings="5" released="18" relevance="11" trackid="1491398390" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Tantra4GayMen" src="https://is2-ssl.mzstatic.com/image/thumb/Purple115/v4/8f/f4/88/8ff4889f-4185-998c-9bdb-94a13fa99836/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Tantra4GayMen
+     </div>
+     <div class="appdetail">
+      Meet other men both local to you and the places that you travel to that are interested in more ecstatic, more sensual, more loving and more spiritual
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star5.png"/>
+      (1)
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      T4GM Ltd
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/tantra4gaymen/id1491398390?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Tantra4GayMen','Free','https://apps.apple.com/nz/app/tantra4gaymen/id1491398390?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/31/ca/e0/31cae00e-5136-a126-6901-06a03ea3ee32/2ddbb75f-f019-4a9f-ad82-aaed551da160_01_5.5.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/c2/2a/b3/c22ab39d-8cd0-5142-f133-7d0998918655/55754971-2c1f-44cc-9cff-9711655a0b84_02_5.5.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/c4/82/e1/c482e152-b24d-e308-5590-73c45f641d7c/bed99931-4171-4eef-bb0c-f5687be0b23c_03_5.5.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/b9/6f/4c/b96f4cc4-2ed0-1f69-86ef-4bafc05f64c2/2b088e6b-1c79-44ce-9f8f-083b14f8e8dd_04_5.5.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="12+" categories="Lifestyle,Magazines &amp; Newspapers" class="appmain" price="0" ratingcount="0" ratings="0" released="94" relevance="10" trackid="711407008" updated="69">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Diversity Rules Magazine: Queer community life publication" src="https://is1-ssl.mzstatic.com/image/thumb/Purple3/v4/d6/b9/c7/d6b9c757-009e-189f-c3ce-51a7bdeda8cd/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Diversity Rules Magazine: Queer community life publication
+     </div>
+     <div class="appdetail">
+      Diversity Rules Magazine is an indie publication proudly serving the queer community and its allies since 2006. Diversity Rules is very much like the
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      PressPad Sp. z o.o.
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/diversity-rules-magazine-queer-community-life-publication/id711407008?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Diversity Rules Magazine: Queer community life publication','Free','https://apps.apple.com/nz/app/diversity-rules-magazine-queer-community-life-publication/id711407008?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple6/v4/80/9d/3d/809d3d5b-8747-098e-d1b2-82b89da1d7e3/mzl.oxujycip.png/640x1136bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple4/v4/b9/5d/f4/b95df4ad-cb3d-0a5d-62cb-6b56ceae1473/mzl.mnqirced.png/640x1136bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple/v4/9a/12/91/9a129103-b306-1cce-8f7c-a0dfe2d7298a/mzl.gdebjusz.png/640x1136bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple4/v4/55/56/ef/5556ef37-28d7-e7fb-d5d1-3c6f8da58834/mzl.kotzvzsq.png/640x1136bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Travel,Magazines &amp; Newspapers" class="appmain" price="0" ratingcount="0" ratings="0" released="83" relevance="10" trackid="903033857" updated="69">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Gaycation: LGBT Travel Magazine" src="https://is2-ssl.mzstatic.com/image/thumb/Purple3/v4/1e/7f/a1/1e7fa12b-15c2-4c54-502a-800f620cfe70/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Gaycation: LGBT Travel Magazine
+     </div>
+     <div class="appdetail">
+      Gaycation Magazine was created because the personality of LGBT travel is changing. The world has grown smaller and more accessible, yet more homogeniz
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Travel
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      PressPad Sp. z o.o.
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/gaycation-lgbt-travel-magazine/id903033857?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Gaycation: LGBT Travel Magazine','Free','https://apps.apple.com/nz/app/gaycation-lgbt-travel-magazine/id903033857?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple5/v4/ea/53/34/ea5334c3-25b9-6426-571b-2cae8896525c/mzl.khsyglcr.png/640x1136bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple1/v4/74/62/3e/74623e8c-63f7-62dd-adda-df96037cdfee/mzl.urfxhbph.png/640x1136bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple5/v4/6b/97/67/6b9767fb-f149-622e-b277-3517b5e79496/mzl.dfzbkbcd.png/640x1136bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="0" ratings="0" released="9" relevance="20" trackid="1518471027" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="ComeOut: LGBT community &amp; chat" src="https://is3-ssl.mzstatic.com/image/thumb/Purple125/v4/b6/e6/27/b6e62768-8c5f-3174-e176-5c300dfc8495/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      ComeOut: LGBT community &amp; chat
+     </div>
+     <div class="appdetail">
+      Welcome to the ComeOut community app and a brand new more social way to meet LGBT friends from all around the world! ComeOut strives to become the bes
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Social Tech Invest AB
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/comeout-lgbt-community-chat/id1518471027?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','ComeOut: LGBT community &amp; chat','Free','https://apps.apple.com/nz/app/comeout-lgbt-community-chat/id1518471027?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/01/63/05/016305b1-2d25-90b1-64dd-9475a18abecc/8c85c0bd-e055-45cf-9616-880aefc68ee1_Screenshots_5_U002c5_inch_-_1.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/33/e5/9b/33e59bcc-4b49-def7-7685-9cb6de8a99cb/d3e9e8d1-0ecb-4d64-bd1b-067df9406bd3_Screenshots_5_U002c5_inch_-_2.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/f0/29/4d/f0294ded-a082-2d7a-38d9-64fc0d1bd0bb/9d7ace49-70a0-471d-942d-cd04c996343a_Artboard_116_U002c5.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple124/v4/ad/e8/aa/ade8aa12-b5a3-4fb3-8349-54016861a343/9866f611-7a7f-4a38-b3ed-64d735a567c9_Screenshots_5_U002c5_inch_-_5.jpg/392x696bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="4+" categories="Photo &amp; Video,Utilities" class="appmain" price="0" ratingcount="0" ratings="0" released="72" relevance="9" trackid="1016318268" updated="72">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Make Me Pride (Flag)" src="https://is3-ssl.mzstatic.com/image/thumb/Purple7/v4/2a/a9/5f/2aa95f35-62f9-63f8-9c35-1f79ed0702d7/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Make Me Pride (Flag)
+     </div>
+     <div class="appdetail">
+      ##LoveWins for everything##
+Application that will help you to express love in every aspect.
+Share your lifestyle on the photo from the gallery or take
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Photo &amp; Video
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      1Moby Co., Ltd.
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/make-me-pride-flag/id1016318268?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Make Me Pride (Flag)','Free','https://apps.apple.com/nz/app/make-me-pride-flag/id1016318268?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple7/v4/06/c0/64/06c0647a-8cc4-bc1c-adb5-87c7e381c07a/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple1/v4/28/09/6e/28096e56-8f15-754c-7481-8fcf69337ec1/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking" class="appmain" price="0" ratingcount="0" ratings="0" released="96" relevance="8" trackid="633262757" updated="49">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Spindle plus for L" src="https://is4-ssl.mzstatic.com/image/thumb/Purple127/v4/99/09/c0/9909c090-5a84-b76a-9a6c-4c50286b8ae3/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Spindle plus for L
+     </div>
+     <div class="appdetail">
+      Spindle plus for L is girls only social and communication application to expand your search on same-gender friends and peers, so you can become true p
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      toshimi katou
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/spindle-plus-for-l/id633262757?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Spindle plus for L','Free','https://apps.apple.com/nz/app/spindle-plus-for-l/id633262757?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple19/v4/dd/d0/3b/ddd03b13-cf50-5091-d82c-452b81442d29/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple71/v4/cb/0d/28/cb0d284d-aba2-bfb7-d953-5dbb51397fef/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple71/v4/9f/f1/de/9ff1de9f-8f92-0d6d-ec30-14592540dd14/pr_source.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple71/v4/a5/09/c3/a509c3a3-c92d-d769-79d0-2a7b66645b0e/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="0" ratings="0" released="19" relevance="19" trackid="1476710285" updated="2">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Trans Dating &amp; Chat - Transdr" src="https://is3-ssl.mzstatic.com/image/thumb/Purple124/v4/a7/82/17/a7821773-b4d5-48c8-60e9-fd205e91b739/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Trans Dating &amp; Chat - Transdr
+     </div>
+     <div class="appdetail">
+      Trans Dating &amp; Chat - Transdr
+     Do you love Cosplay and meeting new people for deep conversation? Enjoy hanging out with friends and not being tied
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      惜珍 王
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/trans-dating-chat-transdr/id1476710285?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Trans Dating &amp; Chat - Transdr','Free','https://apps.apple.com/nz/app/trans-dating-chat-transdr/id1476710285?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/5e/a5/1e/5ea51e36-8cbb-501d-e8ea-2a5ed4d4ea93/30cfd75d-523d-47b5-bf43-508f72aa7615_1@3x.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/f2/91/aa/f291aaa1-1fe4-b584-ec34-7bb133b6bafa/123ea136-91b8-42a6-a66a-5110df792c0f_4@3x.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/03/bf/95/03bf9517-dbe5-c253-1435-7c4ea35bf76c/d379c76b-43d3-4b8f-860d-3b9a0c894fee_3@3x.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/53/0f/c5/530fc542-a61a-a3ec-85a3-9623691ee8b1/e60fd5a3-b4b4-472b-a68e-1d2483305179_2@3x.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="12+" categories="Entertainment,Travel" class="appmain" price="0" ratingcount="0" ratings="0" released="101" relevance="18" trackid="603142771" updated="39">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="OUTshine Film Festival" src="https://is3-ssl.mzstatic.com/image/thumb/Purple128/v4/ea/72/7f/ea727fb7-df38-d09e-850a-0b9cea0d3631/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      OUTshine Film Festival
+     </div>
+     <div class="appdetail">
+      Outshine is everything you want in a film festival... inviting, glowing, and eclipsing all others before it. Our mission is to inspire, entertain, and
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Entertainment
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Pride Labs LLC
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/outshine-film-festival/id603142771?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','OUTshine Film Festival','Free','https://apps.apple.com/nz/app/outshine-film-festival/id603142771?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple128/v4/f9/b4/fb/f9b4fb75-fff7-e353-ead6-107b984edfbc/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/27/7c/01/277c0174-2c68-0429-ed72-36f2bc69b783/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/bb/07/83/bb07831e-21d2-6385-0c7c-e30b79061bad/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/59/96/78/59967853-9515-bbed-3a4d-3ce232b78084/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Health &amp; Fitness,Medical" class="appmain" price="0" ratingcount="0" ratings="0" released="73" relevance="18" trackid="955921578" updated="73">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Getting Off" src="https://is4-ssl.mzstatic.com/image/thumb/Purple5/v4/f5/bf/8d/f5bf8d28-2871-e791-ecf2-b8479b8fa5e3/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Getting Off
+     </div>
+     <div class="appdetail">
+      Gay or bisexual men who want to reduce their methamphetamine use may find they have few options when seeking treatment. The Getting Off app provides a
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Health &amp; Fitness
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Healthism Systems Inc.
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/getting-off/id955921578?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Getting Off','Free','https://apps.apple.com/nz/app/getting-off/id955921578?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple5/v4/fe/ad/8d/fead8d58-f1e7-faec-6ea7-040754421c29/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple1/v4/ae/49/e0/ae49e004-74b3-cff8-f993-d085b80e00e1/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple1/v4/f0/00/b9/f000b91f-93e6-ada3-c9db-005a4c9654d5/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple1/v4/fb/bd/03/fbbd0301-143f-7b71-dab2-a48570a8fa1e/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="4+" categories="Games,Trivia,Entertainment" class="appmain" price="3.49" ratingcount="0" ratings="0" released="127" relevance="6" trackid="408661134" updated="19">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Lesbian Trivia!" src="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/24/f7/37/24f737f3-9472-970b-3c50-e318d120960b/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Lesbian Trivia!
+     </div>
+     <div class="appdetail">
+      *******************************************
+* Lesbian Trivia!
+*******************************************
+Challenge yourself in this fast-paced Lesbia
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Games
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Rainbow Interactive
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/lesbian-trivia/id408661134?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Lesbian Trivia!','$3.49','https://apps.apple.com/nz/app/lesbian-trivia/id408661134?uo=4');" rel="nofollow" target="tas">
+      $3.49
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/66/af/14/66af1413-d3ac-2a77-5412-292dcbc23ce5/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/d2/72/0d/d2720ddc-19c4-a771-d359-8799e8746390/mzl.ghgakubt.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/b4/ba/22/b4ba224e-9b39-4c6e-34f5-3fbccfe563e7/mzl.bdimrbho.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/16/0a/60/160a60ae-7e42-28ef-7b42-1fb5fdce5fcb/mzl.hljnkbsz.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Lifestyle" class="appmain" price="0" ratingcount="0" ratings="0" released="57" relevance="6" trackid="1156125382" updated="32">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Hong Kong Pride" src="https://is3-ssl.mzstatic.com/image/thumb/Purple128/v4/62/1b/9f/621b9fca-d024-4403-30ec-5c840b815a64/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Hong Kong Pride
+     </div>
+     <div class="appdetail">
+      Welcome to the official mobile app for Hong Kong Pride! This app is a comprehensive guide to our annual Pride celebration, including events, photos an
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Hong Kong Pride Parade
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/hong-kong-pride/id1156125382?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Hong Kong Pride','Free','https://apps.apple.com/nz/app/hong-kong-pride/id1156125382?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple128/v4/2e/c5/8e/2ec58e58-5de1-b465-45fc-8a8880eec170/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple118/v4/c0/f5/9f/c0f59f93-c0b2-15ed-ac9e-0ac3be35e90b/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/d0/b7/90/d0b79054-a7b2-a69a-b713-d1b3a1bf5796/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/30/04/fa/3004faed-eee1-b474-bd0c-6373d57c4638/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="12+" categories="Lifestyle,Travel" class="appmain" price="0" ratingcount="0" ratings="0" released="133" relevance="5" trackid="378928291" updated="61">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Gay Pride Finder" src="https://is3-ssl.mzstatic.com/image/thumb/Purple18/v4/ce/47/43/ce474354-be3b-02a5-98e7-420c110a71ad/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Gay Pride Finder
+     </div>
+     <div class="appdetail">
+      This is the easiest, most fun way to find GLBT Pride parades and events around the world! 
+
+Whether you'll be traveling around the country, to exotic
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Mirandacorp.com, Inc.
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/gay-pride-finder/id378928291?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Gay Pride Finder','Free','https://apps.apple.com/nz/app/gay-pride-finder/id378928291?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple30/v4/cd/34/d8/cd34d84f-d730-d078-dd04-70e560a68ea2/pr_source.png/406x228bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple60/v4/8a/22/2f/8a222fce-ee55-44f1-f098-35690de68fd7/mzl.vwjbwlzh.png/406x228bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple60/v4/da/4d/37/da4d37a7-f907-0879-0605-98646e82cb76/mzl.vwqzeetr.png/406x228bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple30/v4/ac/d8/83/acd88388-cdb8-821f-95db-9b4417849d0b/mzl.adhbygys.png/406x228bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Health &amp; Fitness,Medical" class="appmain" price="0" ratingcount="0" ratings="0" released="79" relevance="16" trackid="946323951" updated="15">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Men Only Tayside" src="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/ed/50/43/ed50439b-7188-b3a1-7c41-bba312a9304a/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Men Only Tayside
+     </div>
+     <div class="appdetail">
+      Reliable info &amp; advice for gay &amp; bisexual men on where to get tested for HIV, Hepatitis B &amp; STIs plus details of treatment &amp; support available in Tays
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Health &amp; Fitness
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      John-Paul Thain
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/men-only-tayside/id946323951?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Men Only Tayside','Free','https://apps.apple.com/nz/app/men-only-tayside/id946323951?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/a1/d8/77/a1d877b7-8ff2-f0e7-1147-9bf7273666d0/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/ce/c4/8d/cec48d76-8fa4-8938-b0bd-6790e34d1259/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/4d/ee/7f/4dee7fc0-0df0-4210-3ac1-fc2873c4db05/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/47/78/8f/47788fbd-d27c-4431-a3ae-a129f5703b38/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Lifestyle,Social Networking" class="appmain" price="0" ratingcount="0" ratings="0" released="48" relevance="4" trackid="1245542372" updated="43">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Gay dating apps &amp; Chats" src="https://is3-ssl.mzstatic.com/image/thumb/Purple118/v4/fe/ae/9d/feae9dbb-65be-8e01-d464-27413f433f05/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Gay dating apps &amp; Chats
+     </div>
+     <div class="appdetail">
+      Gay Dating Apps &amp; Chats is a free app that will help you flirt, get gay dates, and meet new people in your city.  
+With this app, we offer you a detai
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      RETICODE SC
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/gay-dating-apps-chats/id1245542372?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Gay dating apps &amp; Chats','Free','https://apps.apple.com/nz/app/gay-dating-apps-chats/id1245542372?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple128/v4/c2/8f/92/c28f92d3-ed8e-6659-6726-b324c3bccf79/mzl.cjpaakec.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple128/v4/e2/ab/c8/e2abc835-0941-00b9-bb64-2ca865716886/mzl.luxnkfla.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/09/5b/2c/095b2c9f-e6d2-a448-284c-5c08ddfd5378/mzl.ajrnxuxo.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple128/v4/e7/e7/25/e7e725be-59a4-2e49-785f-eec23914bba5/mzl.gnaemjni.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Lifestyle,Social Networking" class="appmain" price="0" ratingcount="0" ratings="0" released="5" relevance="15" trackid="1546380101" updated="0">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Saxiva - Dating. Chat. Go Live" src="https://is2-ssl.mzstatic.com/image/thumb/Purple115/v4/03/aa/66/03aa66e2-ef6c-9ed3-fb81-f1888a239fd2/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Saxiva - Dating. Chat. Go Live
+     </div>
+     <div class="appdetail">
+      Welcome to Saxiva - the place to date honestly!
+
+Make the first move. Download Saxiva and start your dating journey! 
+
+Join the biggest dating app in
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Anybody LLC
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/saxiva-dating-chat-go-live/id1546380101?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Saxiva - Dating. Chat. Go Live','Free','https://apps.apple.com/nz/app/saxiva-dating-chat-go-live/id1546380101?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/81/25/88/812588c2-2682-1445-7a43-115f83c5f614/96eeb437-2a7a-499c-a470-4875313ea1b1_1.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/6d/69/89/6d698974-8b6c-7d3c-cd53-e294edb09c96/9b9b25ca-6396-46fb-b359-78c85b92e772_2.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/19/dc/67/19dc67b3-458b-3ff3-b7c8-d8f4151f69a0/038e74f5-6bf9-4bce-b123-4d852e1447bb_3.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/3b/84/84/3b848455-0de1-45ff-33a5-7ef7c66ebf3b/11693196-06f0-4d5c-a998-3c6eb6c60a09_4.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="4+" categories="Entertainment,Lifestyle" class="appmain" price="0" ratingcount="0" ratings="0" released="72" relevance="3" trackid="1013730941" updated="72">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="LGBT Camera" src="https://is2-ssl.mzstatic.com/image/thumb/Purple7/v4/2c/fa/d4/2cfad49d-5542-97f7-496a-2fe5432c1718/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      LGBT Camera
+     </div>
+     <div class="appdetail">
+      Do you want to make photo with rainbow style, this is the leading application for creating images of Lgbt community.
+Try and create your own photo to
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Entertainment
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Vu Trung Hieu
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/lgbt-camera/id1013730941?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','LGBT Camera','Free','https://apps.apple.com/nz/app/lgbt-camera/id1013730941?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple7/v4/ba/61/72/ba61724c-025d-b2ed-f863-9b0e980f49ef/pr_source.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple1/v4/6d/ae/9d/6dae9da6-464a-55b6-f15e-2ee7d3a9220f/pr_source.jpg/392x696bb.jpg"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple1/v4/46/61/f4/4661f42f-d213-be3b-813d-25bc16ca8912/pr_source.jpg/392x696bb.jpg"/>
+    </div>
+   </div>
+   <br/>
+   <div age="4+" categories="Music,Entertainment" class="appmain" price="0" ratingcount="0" ratings="0" released="116" relevance="3" trackid="482576473" updated="37">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Hotmale Radio" src="https://is3-ssl.mzstatic.com/image/thumb/Purple115/v4/41/ab/b2/41abb2a6-c8fe-3154-4702-e8a4759d300e/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Hotmale Radio
+     </div>
+     <div class="appdetail">
+      Listen live to Hotmale Radio, message presenters and view which shows are on air right now.
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Music
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      John Edwards
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/hotmale-radio/id482576473?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Hotmale Radio','Free','https://apps.apple.com/nz/app/hotmale-radio/id482576473?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple125/v4/48/e3/5a/48e35abe-c4d9-1270-c2a3-a95ef29be051/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple125/v4/cc/d0/f7/ccd0f7cc-d290-7c6c-87c1-a69953580121/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple125/v4/5d/65/96/5d6596e3-3ae3-e35d-2022-973ec1b27c00/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple115/v4/1f/84/2b/1f842b81-e10f-ee7f-cbcd-a64ce3ba6341/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="4+" categories="Lifestyle" class="appmain" price="0" ratingcount="0" ratings="0" released="73" relevance="2" trackid="994932323" updated="46">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Roanoke Pride" src="https://is3-ssl.mzstatic.com/image/thumb/Purple128/v4/5c/da/57/5cda57d6-f1f8-ba56-f36c-f9dd0ae37a78/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Roanoke Pride
+     </div>
+     <div class="appdetail">
+      Welcome to the official mobile app for Roanoke Pride! This app is a comprehensive guide to our annual Pride celebration, including events, photos and
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Pride Labs LLC
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/roanoke-pride/id994932323?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Roanoke Pride','Free','https://apps.apple.com/nz/app/roanoke-pride/id994932323?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple118/v4/67/a9/43/67a943ea-63ea-9417-149b-5db413e93a1d/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple128/v4/b6/dc/57/b6dc57a5-d3b4-5b5a-df13-baf133846f62/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple118/v4/7e/34/f9/7e34f9e1-fc8f-452f-4739-d9cb23388d24/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/c4/0e/4c/c40e4c2c-64df-4ffd-9ae3-a99e40617383/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="9+" categories="Lifestyle,Travel" class="appmain" price="0" ratingcount="0" ratings="0" released="107" relevance="2" trackid="548657617" updated="46">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Las Vegas Gay Pride" src="https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/96/2d/e9/962de941-deae-eb32-c61b-b05560411308/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Las Vegas Gay Pride
+     </div>
+     <div class="appdetail">
+      Welcome to the official mobile app for Las Vegas Pride! This app is a comprehensive guide to our annual Pride celebration, including events, photos an
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Lifestyle
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Pride Labs LLC
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/las-vegas-gay-pride/id548657617?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Las Vegas Gay Pride','Free','https://apps.apple.com/nz/app/las-vegas-gay-pride/id548657617?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple118/v4/a2/7c/6f/a27c6f9a-38f5-f400-3d7b-a7e62761298f/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple128/v4/33/4c/b1/334cb1c1-ab5c-e41c-0516-3894e7fbb97c/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple118/v4/2b/23/3c/2b233c4a-6940-55ce-e80c-05491bc48581/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple118/v4/5e/8b/30/5e8b30ce-22e2-b57a-a9d3-a9e855a14109/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="17+" categories="Entertainment,Lifestyle" class="appmain" price="0" ratingcount="0" ratings="0" released="98" relevance="1" trackid="640809889" updated="46">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="Boston LGBT Film Festival" src="https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/de/0e/fd/de0efdbd-00b7-18c1-65bb-31885f1b6bcf/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      Boston LGBT Film Festival
+     </div>
+     <div class="appdetail">
+      Welcome to the official mobile app for The Boston LGBT Film Festival! This app is a comprehensive guide to our annual film festival including movies,
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Entertainment
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Pride Labs LLC
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/boston-lgbt-film-festival/id640809889?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','Boston LGBT Film Festival','Free','https://apps.apple.com/nz/app/boston-lgbt-film-festival/id640809889?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/75/55/32/7555328c-b8a9-8235-3a85-fd728ecbb772/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/91/e9/11/91e91178-9c46-cbb6-68de-09acddbc87f3/pr_source.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/71/db/4f/71db4fe1-7005-2309-02c0-ca4654351cd0/pr_source.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <div age="12+" categories="Social Networking,Lifestyle" class="appmain" price="0" ratingcount="0" ratings="0" released="57" relevance="1" trackid="1153369852" updated="40">
+    <div onclick="hideImg(this,'');" style="float:left;">
+     <img alt="LGBT Amino en Español" src="https://is1-ssl.mzstatic.com/image/thumb/Purple128/v4/9a/0e/02/9a0e0295-26ac-ab40-4a72-00658bf55e1d/source/60x60bb.jpg" style="border-radius:10px;width:60px;"/>
+    </div>
+    <div class="appdesc" onclick="hideImg(this,'');">
+     <div class="apptitle">
+      LGBT Amino en Español
+     </div>
+     <div class="appdetail">
+      LGBT es la comunidad de alto crecimiento y plataforma de chat para LGBT y aliados. Conoce nuevos amigos, exprésate y comparte tu opinión en una comu
+     </div>
+     <div class="appseller">
+      <img class="star" src="/images/star0.png"/>
+     </div>
+     <div class="appseller mobcat">
+      <i aria-hidden="true" class="icodesk fa fa-folder-o">
+      </i>
+      Social Networking
+     </div>
+     <div class="appseller mobseller">
+      <i aria-hidden="true" class="fa fa-user" style="color:#aaa">
+      </i>
+      Narvii Inc.
+     </div>
+    </div>
+    <div style="float:left;">
+     <a class="getappbtn" href="https://apps.apple.com/nz/app/lgbt-amino-en-espa%C3%B1ol/id1153369852?uo=4&amp;at=1010lpjB&amp;ct=tas" onmousedown="logistics('visited','LGBT Amino en Español','Free','https://apps.apple.com/nz/app/lgbt-amino-en-espa%C3%B1ol/id1153369852?uo=4');" rel="nofollow" target="tas">
+      Free
+     </a>
+    </div>
+    <div class="screens">
+     <img class="screens" src="/images/imgload.svg" src1="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/b9/61/6f/b9616f53-fc5d-d13a-3872-50e4c8eee22d/mzl.wcwynzex.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is3-ssl.mzstatic.com/image/thumb/Purple118/v4/c3/a6/67/c3a66725-ff7e-f2e7-a942-12e96e1339c5/mzl.vgsbyzss.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is1-ssl.mzstatic.com/image/thumb/Purple62/v4/92/92/fe/9292fe51-9108-a06a-1f59-c86c80456803/mzl.fnsapagj.png/392x696bb.png"/>
+     <img class="screens" src="/images/imgload.svg" src1="https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/7d/ff/ba/7dffba7c-5857-b0dc-27ac-99151a88741c/mzl.uawledvl.png/392x696bb.png"/>
+    </div>
+   </div>
+   <br/>
+   <script>
+    platform.value="software";searchtxt.value = "bisexual";window.localStorage.platform = platform.value;divhidden1.innerHTML = 76;
+          divtotal1.innerHTML = 76;
+          divhidden2.innerHTML = 76;
+          divtotal2.innerHTML = 76;
+   </script>
+  </div>
+  <div id="divalert">
+   <h2>
+    Welcome to TheAppStore.org!
+   </h2>
+   <div style="padding:1em;">
+    It looks like you're using an ad blocker. That's okay. Who doesn't? But without advertising-income, we can't keep making this site awesome. Please disable your ad blocker and refresh this page.
+    <br/>
+    <br/>
+    Thanks for understanding 🙏
+   </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.js">
+  </script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js">
+  </script>
+  <script src="/script.js?v=1589033386" type="text/javascript">
+  </script>
+  <script>
+   setupAutoComplete();
+    loadSettings();
+    filter();
+  </script>
+ </body>
+</html>

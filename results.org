@@ -1,0 +1,24 @@
+* Search terms Apple store
+  - device is iPhone
+  - Country is New Zealand for fnd.io. Country cannot be especified on theappstore.org
+  - Search was conducted on Sat 24 April 2021
+  - Results page was saved using Google Chrome Version 90.0.4430.85 (Official Build) (x86_64) for MacOS 
+  - The results were saved on Google drive
+  - The table bellow shows the numbeer of results for each search term. Not all the apps shown on the results are related to the theme on this research.
+ 
+
+
+| search terms                  | fnd.io | theappstore.org |
+|-------------------------------+--------+-----------------|
+| 'gay'                         |    121 |             102 |
+| 'gay-dating'                  |    119 |             102 |
+| 'homosexual'                  |     60 |              29 |
+| 'men who have sex with men'   |      0 |               2 |
+| 'man who have sex with man'   |      0 |               2 |
+| 'MSM'                         |     28 |              47 |
+| 'social media dating app'     |     60 |              90 |
+| 'socialmedia dating app',     |     83 |              86 |
+| 'gay social media dating app' |     13 |              15 |
+| 'gay socialmedia dating app'  |     13 |              15 |
+
+
